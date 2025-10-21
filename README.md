@@ -15,6 +15,7 @@ It will init zoxide, make it replace cd command and add cdi (interactive with fz
 
 ### nvim
 install from package manager
+copy nvim folder from .config to $HOME/.config
 
 ### tmux
 install from package manger.
