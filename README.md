@@ -9,13 +9,16 @@
 ## Installation
 
 ### zoxide
-install from package manager and run
-```zoxide init --cmd cd```
-It will init zoxide, make it replace cd command and add cdi (interactive with fzf)
+install from package manager and run  
+```zoxide init --cmd cd```  
+It will init zoxide, make it replace cd command and add cdi (interactive with fzf)  
 
 ### nvim
-install from package manager
-copy nvim folder from .config to $HOME/.config
+install from package manager  
+copy nvim folder from .config to $HOME/.config  
+
+install treesitter package for syntax highlighting  
+```git clone https://github.com/nvim-treesitter/nvim-treesitter ~/.local/share/nvim/site/pack/plugins/start/nvim-tresitter```
 
 ### tmux
 install from package manger.

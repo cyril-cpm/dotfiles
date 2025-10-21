@@ -100,3 +100,17 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.o.autoindent = true
+
+-- Install treesitter configs for language syntax highlight
+require("nvim-treesitter.configs").setup {
+  ensure_installed = { "c", "lua", "python", "cpp" }, -- adapte à tes langages
+  highlight = { enable = true },
+}
+
+-- Set color scheme when open Vim
+vim.api.nvim_create_autocmd("VimEnter", {
+	pattern = "*",
+	callback = function()
+		vim.cmd.colorscheme("habamax")
+	end,
+})
