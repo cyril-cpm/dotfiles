@@ -21,9 +21,9 @@ vim.o.relativenumber = true
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
 -- See `:help 'clipboard'`
 vim.api.nvim_create_autocmd('UIEnter', {
-  callback = function()
-    vim.o.clipboard = 'unnamedplus'
-  end,
+	callback = function()
+		vim.o.clipboard = 'unnamedplus'
+	end,
 })
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
@@ -64,10 +64,10 @@ vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l')
 -- Highlight when yanking (copying) text.
 -- Try it with `yap` in normal mode. See `:h vim.hl.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  callback = function()
-    vim.hl.on_yank()
-  end,
+	desc = 'Highlight when yanking (copying) text',
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })
 
 -- [[ Create user commands ]]
@@ -75,9 +75,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Create a command `:GitBlameLine` that print the git blame for the current line
 vim.api.nvim_create_user_command('GitBlameLine', function()
-  local line_number = vim.fn.line('.') -- Get the current line number. See `:h line()`
-  local filename = vim.api.nvim_buf_get_name(0)
-  print(vim.fn.system({ 'git', 'blame', '-L', line_number .. ',+1', filename }))
+	local line_number = vim.fn.line('.') -- Get the current line number. See `:h line()`
+	local filename = vim.api.nvim_buf_get_name(0)
+	print(vim.fn.system({ 'git', 'blame', '-L', line_number .. ',+1', filename }))
 end, { desc = 'Print the git blame for the current line' })
 
 -- [[ Add optional packages ]]
@@ -91,20 +91,20 @@ vim.cmd('packadd! nohlsearch')
 -- Set tab width to 4
 -- ~/.config/nvim/init.lua
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "*",
-  callback = function()
-    vim.opt_local.tabstop = 4
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.expandtab = false
-  end,
+	pattern = "*",
+	callback = function()
+		vim.opt_local.tabstop = 4
+		vim.opt_local.shiftwidth = 4
+		vim.opt_local.expandtab = false
+	end,
 })
 
 vim.o.autoindent = true
 
 -- Install treesitter configs for language syntax highlight
 require("nvim-treesitter.configs").setup {
-  ensure_installed = { "c", "lua", "python", "cpp" }, -- adapte à tes langages
-  highlight = { enable = true },
+	ensure_installed = { "c", "lua", "python", "cpp" }, -- adapte à tes langages
+	highlight = { enable = true },
 }
 
 -- Set color scheme when open Vim
@@ -114,3 +114,47 @@ vim.api.nvim_create_autocmd("VimEnter", {
 		vim.cmd.colorscheme("habamax")
 	end,
 })
+
+-- Telescope
+local t = require("telescope")
+local z_utils = require("telescope._extensions.zoxide.utils")
+
+
+t.setup({
+	extensions = {
+		zoxide = {
+			prompt_title = "[ Zoxide List ]",
+
+			-- Zoxide list command with score
+			list_command = "zoxide query -ls",
+			mappings = {
+				default = {
+					action = function(selection)
+						vim.cmd.cd(selection.path)
+					end,
+					after_action = function(selection)
+						vim.notify("Directory changed to " .. selection.path)
+					end,
+				},
+				["<C-s>"] = { action = z_utils.create_basic_command("split") },
+				["<C-v>"] = { action = z_utils.create_basic_command("vsplit") },
+				["<C-e>"] = { action = z_utils.create_basic_command("edit") },
+				["<C-f>"] = {
+					keepinsert = true,
+					action = function(selection)
+						builtin.find_files({ cwd = selection.path })
+					end,
+				},
+				["<C-t>"] = {
+					action = function(selection)
+						vim.cmd.tcd(selection.path)
+					end,
+				},
+			}
+		}
+	}
+})
+t.load_extension('fzf')
+t.load_extension('zoxide')
+
+vim.keymap.set("n", "t", t.extensions.zoxide.list)

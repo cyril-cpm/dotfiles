@@ -20,6 +20,20 @@ copy nvim folder from .config to $HOME/.config
 install treesitter package for syntax highlighting  
 ```git clone https://github.com/nvim-treesitter/nvim-treesitter ~/.local/share/nvim/site/pack/plugins/start/nvim-tresitter```
 
+install telescope.nvim for fuzzy finder interface  
+```git clone https://github.com/nvim-telescope/telescope.nvim ~/.local/share/nvim/site/pack/plugins/start/telescope.nvim```  
+
+install plenary.nvim (telescope.nvim dependency)  
+```git clone https://github.com/nvim-telescope/telescope.nvim ~/.local/share/nvim/site/pack/plugins/start/plenary.nvim```  
+
+install telescope-fzf-native.nvim to use fzf as telescope.nvim engine  
+```git clone https://github.com/nvim-telescope/telescope-fzf-native.nvim ~/.local/share/nvim/site/pack/plugins/start/telescope-fzf-native.nvim```  
+run ```make``` inside of cloned repo  
+
+install telescope-zoxide to use zoxide with telescope.nvim  
+```git clone https://github.com/jvgrootveld/telescope-zoxide ~/.local/share/nvim/site/pack/plugins/start/telescope-zoxide```  
+
+
 ### tmux
 install from package manger.
 can be run with
