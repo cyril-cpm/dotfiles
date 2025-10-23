@@ -151,10 +151,33 @@ t.setup({
 					end,
 				},
 			}
-		}
+		},
+		file_browser = {
+			theme = "ivy",
+			hijack_netwr = true,
+			mappings = {}
+		},
 	}
 })
 t.load_extension('fzf')
 t.load_extension('zoxide')
+t.load_extension('file_browser')
 
 vim.keymap.set("n", "t", t.extensions.zoxide.list)
+
+-- Yazi
+require('yazi').setup()
+
+-- LSP
+
+vim.lsp.config('clangd', {
+	cmd = { 'clangd', '--background-index' },
+	--root_dir = function(fname)
+		--return require('lspconfig.util').root_pattern('platformio.ini', '.git')(fname)
+		
+	--end,
+	filetypes = { 'c', 'cpp', 'h', 'hpp' },
+})
+
+
+vim.lsp.enable('clangd')
