@@ -14,6 +14,8 @@ compinit
 
 eval "$(zoxide init zsh --cmd cd)"
 
+eval "$(starship init zsh)"
+
 export PIO_CONFIGS=$HOME/custom_platformio_ini
 export PATH=$HOME/.platformio/penv/bin:$PATH
 
