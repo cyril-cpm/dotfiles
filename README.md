@@ -7,6 +7,7 @@
 * custom ch341 driver (remove rts/cts at open)
 * yazi (TUI file explorer)
 * clangd (lsp server for nvim)
+* starship (custom prompt with lot of information)
 
 ## Installation
 
@@ -63,3 +64,6 @@ for nobara/fedora add lihaohong repo
 
 ### clangd
 install clang-tools-extra from package manager to get clangd
+
+### starship
+install starship from package manager

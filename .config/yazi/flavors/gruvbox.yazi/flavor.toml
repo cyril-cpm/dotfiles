@@ -1,0 +1,205 @@
+
+# vim:fileencoding=utf-8:foldmethod=marker
+
+# : Manager {{{
+
+[mgr]
+cwd = { fg = "#d79921" }
+
+hovered         = { reversed = true, bg = "#fbf1c7" }
+preview_hovered = { underline = true }
+
+find_keyword  = { fg = "#d79921", bold = true, italic = true, underline = true }
+find_position = { fg = "#b16286", bold = true, italic = true }
+
+symlink_target = { italic = true }
+
+marker_copied   = { fg = "#689d6a", bg = "#689d6a" }
+marker_cut      = { fg = "#cc241d", bg = "#cc241d" }
+marker_marked   = { fg = "#689d6a", bg = "#8ec07c" }
+marker_selected = { fg = "#d79921", bg = "#d79921" }
+
+count_copied   = { fg = "#3c3836", bg = "#689d6a" }
+count_cut      = { fg = "#3c3836", bg = "#cc241d" }
+count_selected = { fg = "#3c3836", bg = "#d79921" }
+
+border_symbol = "│"
+border_style  = { fg = "#665c54" }
+
+syntect_theme = ""
+
+# : }}}
+
+
+# : Tabs {{{
+
+[tabs]
+active   = { bg = "#689d6a", fg = "#3c3836", bold = true }
+inactive = { fg = "#d79921", bg = "#3c3836" }
+
+sep_inner = { open = "", close = "" }
+sep_outer = { open = "", close = "" }
+
+# : }}}
+
+
+# : Mode {{{
+
+[mode]
+normal_main = { fg = "#3c3836", bg = "#689d6a", bold = true }
+normal_alt  = { fg = "#d79921", bg = "#3c3836", bold = true }
+
+select_main = { fg = "#3c3836", bg = "#cc241d", bold = true }
+select_alt  = { fg = "#d79921", bg = "#3c3836", bold = true }
+
+unset_main = { fg = "#3c3836", bg = "#689d6a", bold = true }
+unset_alt  = { fg = "#d79921", bg = "#3c3836", bold = true }
+
+# : }}}
+
+
+# : Status bar {{{
+
+[status]
+overall   = {}
+sep_left  = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+permissions_s = { fg = "#3c3836" }
+permissions_t = { fg = "#689d6a" }
+permissions_r = { fg = "#d79921" }
+permissions_w = { fg = "#cc241d" }
+permissions_x = { fg = "#689d6a" }
+
+progress_label  = { bold = true }
+progress_normal = { fg = "#689d6a", bg = "#3c3836" }
+progress_error  = { fg = "#cc241d", bg = "#3c3836" }
+
+# : }}}
+
+
+# : Which {{{
+
+[which]
+cols            = 3
+mask            = { bg = "#3c3836" }
+cand            = { fg = "#689d6a" }
+rest            = { fg = "#3c3836" }
+desc            = { fg = "#b16286" }
+separator       = "  "
+separator_style = { fg = "#3c3836" }
+
+# : }}}
+
+
+# : Confirmation {{{
+
+[confirm]
+border     = { fg = "#689d6a" }
+title      = { fg = "#689d6a" }
+body       = {}
+list       = {}
+btn_yes    = { reversed = true }
+btn_no     = {}
+btn_labels = [ "  [Y]es  ", "  (N)o  " ]
+
+# : }}}
+
+
+# : Spotter {{{
+
+[spot]
+border = { fg = "#689d6a" }
+title  = { fg = "#689d6a" }
+
+tbl_col  = { fg = "#689d6a" }
+tbl_cell = { fg = "#d79921", reversed = true }
+
+# : }}}
+
+
+# : Notification {{{
+
+[notify]
+title_info  = { fg = "#689d6a" }
+title_warn  = { fg = "#d79921" }
+title_error = { fg = "#cc241d" }
+
+icon_info  = ""
+icon_warn  = ""
+icon_error = ""
+
+# : }}}
+
+
+# : Picker {{{
+
+[pick]
+border   = { fg = "#689d6a" }
+active   = { fg = "#b16286", bold = true }
+inactive = {}
+
+# : }}}
+
+
+# : Input {{{
+
+[input]
+border   = { fg = "#689d6a" }
+title    = {}
+value    = {}
+selected = { reversed = true }
+
+# : }}}
+
+
+# : Completion {{{
+
+[cmp]
+border   = { fg = "#689d6a" }
+active   = { reversed = true }
+inactive = {}
+
+icon_file    = ""
+icon_folder  = ""
+icon_command = ""
+
+# : }}}
+
+
+# : Task manager {{{
+
+[tasks]
+border  = { fg = "#689d6a" }
+title   = {}
+hovered = { fg = "#b16286", underline = true }
+
+# : }}}
+
+
+# : Help menu {{{
+
+[help]
+on      = { fg = "#d79921" }
+run     = { fg = "#b16286" }
+desc    = {}
+hovered = { reversed = true, bold = true }
+footer  = { fg = "#3c3836", bg = "#fbf1c7" }
+
+# : }}}
+
+
+# : File-specific styles {{{
+
+[filetype]
+rules = [
+	{ mime = "image/*", fg = "#689d6a" },
+	{ mime = "{audio,video}/*", fg = "#b16286" },
+	{ mime = "application/*zip", fg = "#cc241d" },
+	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#cc241d" },
+	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#689d6a" },
+	{ name = "*.cpp", fg = "#458588" },
+	{ name = "*", fg = "#d79921" },
+	{ name = "*/", fg = "#689d6a" },
+]
+# : }}}
