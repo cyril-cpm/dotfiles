@@ -111,7 +111,7 @@ require("nvim-treesitter.configs").setup {
 vim.api.nvim_create_autocmd("VimEnter", {
 	pattern = "*",
 	callback = function()
-		vim.cmd.colorscheme("habamax")
+		vim.cmd.colorscheme("gruvbox")
 	end,
 })
 
