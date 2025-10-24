@@ -181,3 +181,5 @@ vim.lsp.config('clangd', {
 
 
 vim.lsp.enable('clangd')
+vim.go.background = "light"
+vim.go.termguicolors = true
