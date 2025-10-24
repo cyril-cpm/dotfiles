@@ -52,6 +52,9 @@ can be run with
 make it default shell by running
 ```chsh -s $(which tmux)```
 
+install gruvbox theme
+```git clone https://github.com/ege/tmux-gruvbox ~/.config/tmux/tmux-gruvbox```  
+
 ### custom ch341 driver
 go to dofiles/ch341-path
 run 
