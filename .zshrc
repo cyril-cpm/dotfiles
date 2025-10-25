@@ -24,3 +24,4 @@ export PYTHONPATH=$HOME/Settingator/src
 
 
 export EDITOR=$(which nvim)
+export XDG_CONFIG_HOME=$HOME/.config

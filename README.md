@@ -8,6 +8,7 @@
 * yazi (TUI file explorer)
 * clangd (lsp server for nvim)
 * starship (custom prompt with lot of information)
+* kitty (customizable terminal)
 
 ## Installation
 
@@ -76,3 +77,8 @@ install clang-tools-extra from package manager to get clangd
 
 ### starship
 install starship from package manager
+
+### kitty
+install kitty
+install gruvbox theme
+```git clone https://github.com/wdomitrz/kitty_gruvbox_theme ~/.config/kitty/kitty_gruvbox_theme```  
