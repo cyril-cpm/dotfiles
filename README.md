@@ -36,6 +36,9 @@ run ```make``` inside of cloned repo
 install telescope-zoxide to use zoxide with telescope.nvim  
 ```git clone https://github.com/jvgrootveld/telescope-zoxide ~/.local/share/nvim/site/pack/plugins/start/telescope-zoxide```  
 
+install telescope-file-browser
+```git clone https://github.com/nvim-telescope/telescope-file-browser.nvim ~/.local/share/nvim/site/pack/plugins/start/telescope-file-browser```  
+
 install yazi.nvim to use yazi with vim
 ```git clone https://github.com/mikavilpas/yazi.nvim ~/.local/share/nvim/site/pack/plugins/start/yazi.nvim```  
 
