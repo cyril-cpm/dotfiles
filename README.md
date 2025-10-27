@@ -44,7 +44,7 @@ install yazi.nvim to use yazi with vim
 ```git clone https://github.com/mikavilpas/yazi.nvim ~/.local/share/nvim/site/pack/plugins/start/yazi.nvim```  
 
 install nvim-lspconfig to use lsp server
-```git clone https://github.com/neovim/nvim-lspconfig ~/.local/share/nvim/site/pack/plugins/start/yazi.nvim```  
+```git clone https://github.com/neovim/nvim-lspconfig ~/.config/nvim/pack/nvim/start/nvim-lspconfig```  
 
 install gruvbox theme
 ```git clone https://github.com/morhetz/gruvbox ~/.local/share/nvim/site/pack/plugins/start/gruvbox```  
