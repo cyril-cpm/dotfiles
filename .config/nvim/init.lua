@@ -136,8 +136,8 @@ t.setup({
 						vim.notify("Directory changed to " .. selection.path)
 					end,
 				},
-				["<C-s>"] = { action = z_utils.create_basic_command("split") },
-				["<C-v>"] = { action = z_utils.create_basic_command("vsplit") },
+				["<C-v>"] = { action = z_utils.create_basic_command("split") },
+				["<C-h>"] = { action = z_utils.create_basic_command("vsplit") },
 				["<C-e>"] = { action = z_utils.create_basic_command("edit") },
 				["<C-f>"] = {
 					keepinsert = true,
@@ -168,18 +168,47 @@ vim.keymap.set("n", "t", t.extensions.zoxide.list)
 -- Yazi
 require('yazi').setup()
 
+-- BLINK.CMP
+
+local blink = require("blink.cmp")
+blink.setup {
+	keymap = {
+		preset = 'default',
+
+		['<C-k>'] = { 'select_prev', 'fallback' },
+		['<C-j>'] = { 'select_next', 'fallback' },
+		['<Tab>'] = { 'select_and_accept', 'fallback' },
+	},
+	fuzzy = {
+		implementation = "lua",
+	},
+}
+
+local capabilities = blink.get_lsp_capabilities()
 -- LSP
 
 vim.lsp.config('clangd', {
 	cmd = { 'clangd', '--background-index' },
-	--root_dir = function(fname)
-		--return require('lspconfig.util').root_pattern('platformio.ini', '.git')(fname)
-		
-	--end,
-	filetypes = { 'c', 'cpp', 'h', 'hpp' },
+	capabilities = capabilities,	
 })
 
 
 vim.lsp.enable('clangd')
 vim.go.background = "light"
 vim.go.termguicolors = true
+
+-- ALL CUSTOM KEYMAP --
+-- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
+-- lhs is the shortcut and rhs is the key sequence to be applied
+-- It can be used to bind shortcut to another shortcut, to write text and so one.
+-- Note just to bind function
+vim.keymap.set('', 'Y', ':Y<Enter>') -- Open Yazi inside of nvim
+vim.keymap.set('', 'ty', ':Telescope lsp_definitions<Enter>') -- Go To definition
+vim.keymap.set('', 'tu', ':Telescope find_files<Enter>') -- Fuzzy seach file in projet (cwd) with Telescope
+vim.keymap.set('', 'ti', ':Telescope lsp_references<Enter>') -- Get References list with Telescope
+vim.keymap.set('', 'to', ':Telescope zoxide list<Enter>') -- Open zoxide list with Telescope
+vim.keymap.set('', 'tk', ':Telescope keymaps<Enter>') -- See Keymap list with Telescope
+vim.keymap.set('', 'th', ':Telescope live_grep<Enter>') -- Grep in whole cwd file
+vim.keymap.set('', 'tj', ':Telescope grep_string<Enter>') -- Grep in file
+vim.keymap.set('', 'tl', ':Telescope diagnostics<Enter>') -- See LSP diagnostics
+vim.keymap.set('', 'fy', function() vim.diagnostic.open_float() end) -- Open buble with diagnostics at cursor

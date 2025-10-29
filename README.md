@@ -46,6 +46,9 @@ install yazi.nvim to use yazi with vim
 install nvim-lspconfig to use lsp server
 ```git clone https://github.com/neovim/nvim-lspconfig ~/.config/nvim/pack/nvim/start/nvim-lspconfig```  
 
+install blink.cmp for autocompletion
+```git clone https://github.com/Saghen/blink.cmp ~/.config/nvim/pack/nvim/start/blink.cmp```  
+
 install gruvbox theme
 ```git clone https://github.com/morhetz/gruvbox ~/.local/share/nvim/site/pack/plugins/start/gruvbox```  
 
