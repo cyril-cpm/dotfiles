@@ -115,6 +115,9 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 })
 
+vim.go.background = "dark"
+vim.go.termguicolors = true
+
 -- Telescope
 local t = require("telescope")
 local z_utils = require("telescope._extensions.zoxide.utils")
@@ -194,8 +197,6 @@ vim.lsp.config('clangd', {
 
 
 vim.lsp.enable('clangd')
-vim.go.background = "light"
-vim.go.termguicolors = true
 
 -- ALL CUSTOM KEYMAP --
 -- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})

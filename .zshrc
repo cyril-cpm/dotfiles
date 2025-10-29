@@ -34,3 +34,6 @@ function y() {
 	rm -f -- "$tmp"
 }
 alias :q=exit
+alias la="ls -a"
+alias ll="ls -l"
+alias lla="ls -la"
