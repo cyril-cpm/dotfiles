@@ -62,8 +62,15 @@ make it default shell by running
 install gruvbox theme
 ```git clone https://github.com/ege/tmux-gruvbox ~/.config/tmux/tmux-gruvbox```  
 
+## vim-tmux-navigator (seamless tmux and vim navigation)
+```git clone https://github.com/christoomey/vim-tmux-navigator ~/.local/share/nvim/site/pack/plugins/start/gruvbox```  
+```cp ~/.local/share/nvim/site/pack/plugins/start/vim-tmux-navigator/vim-tmux-navigator.tmux ~/.config/tmux/vim-tmux-navigator.tmux```   
+
+## vimux (interact with tmux from vim)
+```git clone https://github.com/preservim/vimux ~/.local/share/nvim/site/pack/plugins/start/vimux```  
+
 ### custom ch341 driver
-go to dofiles/ch341-path
+got to dotfiles/ch341-patch
 run 
 ```make```
 the back the driver binary located at 
