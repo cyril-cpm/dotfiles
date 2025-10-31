@@ -1,3 +1,11 @@
+export XDG_CONFIG_HOME=$HOME/.config
+
+if [[ -z $TMUX ]];
+then
+	tmux
+	exit
+fi
+
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
@@ -24,7 +32,6 @@ export PYTHONPATH=$HOME/Settingator/src
 
 
 export EDITOR=$(which nvim)
-export XDG_CONFIG_HOME=$HOME/.config
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
