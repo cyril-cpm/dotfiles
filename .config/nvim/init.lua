@@ -115,7 +115,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 })
 
-vim.go.background = "light"
+vim.go.background = os.getenv("COLOR_MODE")
 vim.go.termguicolors = true
 
 -- Telescope
