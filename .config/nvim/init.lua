@@ -121,9 +121,21 @@ vim.go.termguicolors = true
 -- Telescope
 local t = require("telescope")
 local z_utils = require("telescope._extensions.zoxide.utils")
-
+local actions = require("telescope.actions")
 
 t.setup({
+	defaults = {
+		mappings = {
+			i = {
+				["<C-h>"] = function(prompt_buffer)
+					actions.file_vsplit(prompt_buffer)
+				end,
+				["<C-v>"] = function(prompt_buffer)
+					actions.file_split(prompt_buffer)
+				end,
+			},
+		},
+	},
 	extensions = {
 		zoxide = {
 			prompt_title = "[ Zoxide List ]",
