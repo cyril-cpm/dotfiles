@@ -108,13 +108,7 @@ require("nvim-treesitter.configs").setup {
 }
 
 -- Set color scheme when open Vim
-vim.api.nvim_create_autocmd("VimEnter", {
-	pattern = "*",
-	callback = function()
-		vim.cmd.colorscheme("gruvbox")
-	end,
-})
-
+vim.cmd.colorscheme("gruvbox")
 vim.go.background = os.getenv("COLOR_MODE")
 vim.go.termguicolors = true
 
@@ -127,10 +121,10 @@ t.setup({
 	defaults = {
 		mappings = {
 			i = {
-				["<C-h>"] = function(prompt_buffer)
+				["<C-v>"] = function(prompt_buffer)
 					actions.file_vsplit(prompt_buffer)
 				end,
-				["<C-v>"] = function(prompt_buffer)
+				["<C-h>"] = function(prompt_buffer)
 					actions.file_split(prompt_buffer)
 				end,
 			},
@@ -210,6 +204,16 @@ vim.lsp.config('clangd', {
 
 vim.lsp.enable('clangd')
 
+-- SMART PIO
+smart_pio = require("smart_pio")
+
+-- LUALINE
+require('lualine').setup{
+	options = {
+		theme = 'gruvbox',
+
+	},
+}
 
 -- ALL CUSTOM KEYMAP --
 -- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})

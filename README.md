@@ -52,12 +52,13 @@ install blink.cmp for autocompletion
 install gruvbox theme
 ```git clone https://github.com/morhetz/gruvbox ~/.local/share/nvim/site/pack/plugins/start/gruvbox```  
 
+install lualine
+```git clone https://github.com/nvim-lualine/lualine.nvim ~/.local/share/nvim/site/pack/plugins/start/lualine.nvim```  
+
 ### tmux
 install from package manger.
 can be run with
 ```tmux```
-make it default shell by running
-```chsh -s $(which tmux)```
 
 install gruvbox theme
 ```git clone https://github.com/ege/tmux-gruvbox ~/.config/tmux/tmux-gruvbox```  
