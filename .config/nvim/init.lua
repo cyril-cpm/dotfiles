@@ -195,9 +195,8 @@ blink.setup {
 
 local capabilities = blink.get_lsp_capabilities()
 -- LSP
-
 vim.lsp.config('clangd', {
-	cmd = { 'clangd', '--background-index' },
+	cmd = { 'clangd', '--background-index'},
 	capabilities = capabilities,	
 })
 
@@ -207,11 +206,18 @@ vim.lsp.enable('clangd')
 -- SMART PIO
 smart_pio = require("smart_pio")
 
+local function SmartPioEnv()
+		
+end
+
 -- LUALINE
 require('lualine').setup{
 	options = {
 		theme = 'gruvbox',
 
+	},
+	sections = {
+		lualine_x = { smart_pio.get_current_env },
 	},
 }
 
@@ -230,3 +236,6 @@ vim.keymap.set('', 'th', ':Telescope live_grep<Enter>') -- Grep in whole cwd fil
 vim.keymap.set('', 'tj', ':Telescope grep_string<Enter>') -- Grep in file
 vim.keymap.set('', 'tl', ':Telescope diagnostics<Enter>') -- See LSP diagnostics
 vim.keymap.set('', 'fy', function() vim.diagnostic.open_float() end) -- Open buble with diagnostics at cursor
+vim.keymap.set('', 'fh', ':SPioSelectEnv<Enter>') -- Select pio environment
+vim.keymap.set('', 'fj', ':SPioBuild<Enter>') -- Build pio project
+vim.keymap.set('', 'fk', ':SPioUpload<Enter>') -- Upload pio project

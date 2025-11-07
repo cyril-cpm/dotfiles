@@ -27,7 +27,7 @@ eval "$(starship init zsh)"
 
 export PIO_CONFIGS=$HOME/custom_platformio_ini
 export PATH=$HOME/.platformio/penv/bin:$PATH
-
+export PLATFORMIO_INSTALL_ROOT=$HOME/.platformio
 alias py=python3
 export PYTHONPATH=$HOME/Settingator/src
 

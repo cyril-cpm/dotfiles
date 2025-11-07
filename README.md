@@ -9,6 +9,7 @@
 * clangd (lsp server for nvim)
 * starship (custom prompt with lot of information)
 * kitty (customizable terminal)
+* Lazygit (TUI Git interface)
 
 ## Installation
 
