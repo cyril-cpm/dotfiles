@@ -175,7 +175,12 @@ t.load_extension('file_browser')
 vim.keymap.set("n", "t", t.extensions.zoxide.list)
 
 -- Yazi
-require('yazi').setup()
+require('yazi').setup({
+	keymaps = {
+		open_file_in_vertical_split = "<c-h>",
+		open_file_in_horizontal_split = "<c-v>",
+	}
+})
 
 -- BLINK.CMP
 
@@ -197,8 +202,7 @@ local capabilities = blink.get_lsp_capabilities()
 -- LSP
 vim.lsp.config('clangd', {
 	cmd = { 'clangd', '--background-index'},
-	capabilities = capabilities,	
-	root_dir = '/home/cpm/SettingatorLib',
+	capabilities = capabilities,
 })
 
 
