@@ -121,10 +121,10 @@ t.setup({
 	defaults = {
 		mappings = {
 			i = {
-				["<C-v>"] = function(prompt_buffer)
+				["<C-h>"] = function(prompt_buffer)
 					actions.file_vsplit(prompt_buffer)
 				end,
-				["<C-h>"] = function(prompt_buffer)
+				["<C-v>"] = function(prompt_buffer)
 					actions.file_split(prompt_buffer)
 				end,
 			},
@@ -198,6 +198,7 @@ local capabilities = blink.get_lsp_capabilities()
 vim.lsp.config('clangd', {
 	cmd = { 'clangd', '--background-index'},
 	capabilities = capabilities,	
+	root_dir = '/home/cpm/SettingatorLib',
 })
 
 
