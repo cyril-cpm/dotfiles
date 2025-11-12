@@ -205,9 +205,8 @@ vim.lsp.config('clangd', {
 	capabilities = capabilities,
 })
 
-
 vim.lsp.enable('clangd')
-
+vim.lsp.enable('pyright')
 -- SMART PIO
 smart_pio = require("smart_pio")
 
@@ -225,6 +224,9 @@ require('lualine').setup{
 		lualine_x = { smart_pio.get_current_env },
 	},
 }
+
+-- DEBUGGER
+require("dap-python").setup("python3")
 
 -- ALL CUSTOM KEYMAP --
 -- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
@@ -244,3 +246,12 @@ vim.keymap.set('', 'fy', function() vim.diagnostic.open_float() end) -- Open bub
 vim.keymap.set('', 'fh', ':SPioSelectEnv<Enter>') -- Select pio environment
 vim.keymap.set('', 'fj', ':SPioBuild<Enter>') -- Build pio project
 vim.keymap.set('', 'fk', ':SPioUpload<Enter>') -- Upload pio project
+vim.keymap.set('', 'gh', ':DapStepOut<Enter>') -- Debugger step out
+vim.keymap.set('', 'gj', ':DapStepOver<Enter>') -- Debugger step over
+vim.keymap.set('', 'gk', ':DapRestartFrame<Enter>') -- Debugger restart frame
+vim.keymap.set('', 'gl', ':DapStepInto<Enter>') -- Debugger step into
+vim.keymap.set('', 'gy', ':DapToggleBreakpoint<Enter>') -- DebuggerToggleBreakPoint
+vim.keymap.set('', 'gu', ':DapNew<Enter>') -- Debugger start
+vim.keymap.set('', 'gi', ':DapContinue<Enter>') -- Debugger Continue
+vim.keymap.set('', 'go', ':DapToggleRepl<Enter>') -- Debugger toggle console
+vim.keymap.set('', 'gp', ':DapTerminate<Enter>') -- Debuger terminate
