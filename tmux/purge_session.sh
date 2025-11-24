@@ -1,0 +1,1 @@
+.config/tmux/purge_session.sh
