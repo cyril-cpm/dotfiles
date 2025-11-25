@@ -4,14 +4,24 @@ export COLOR_MODE='light'
 if [[ -z $TMUX ]];
 then
 	local pushDotfiles() {
-		git -C $HOME/dotfiles add *
+		git -C $HOME/dotfiles add $HOME/dotfiles/*
 		git -C $HOME/dotfiles commit -m "autoUpdateDotfiles"
 		git -C $HOME/dotfiles push
 	}
+
+	local pushKanbanFiles() {
+		git -C $HOME/kanban add $HOME/kanban/*
+		git -C $HOME/kanban commit -m "autoUpdateKanbanFiles"
+		git -C $HOME/kanban push
+	}
+
 	git -C $HOME/dotfiles pull >> /dev/null &
 	git -C $HOME/kanban pull >> /dev/null &
 	tmux
+
 	pushDotfiles &
+	pushKanbanFiles &
+
 	exit
 fi
 
