@@ -15,8 +15,9 @@ then
 		git -C $HOME/kanban push
 	}
 
-	(git -C $HOME/dotfiles pull >> /dev/null &)
-	(git -C $HOME/kanban pull >> /dev/null &)
+	(git -C $HOME/dotfiles pull &)
+	(git -C $HOME/kanban pull &)
+	
 	tmux
 
 	(pushDotfiles &)
