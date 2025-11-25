@@ -19,8 +19,8 @@ then
 	(git -C $HOME/kanban pull >> /dev/null &)
 	tmux
 
-	pushDotfiles &
-	pushKanbanFiles &
+	(pushDotfiles &)
+	(pushKanbanFiles &)
 
 	exit
 fi
