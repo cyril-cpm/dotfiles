@@ -10,6 +10,7 @@
 * starship (custom prompt with lot of information)
 * kitty (customizable terminal)
 * Lazygit (TUI Git interface)
+* Skan (kanban)
 
 ## Installation
 
@@ -65,7 +66,7 @@ install gruvbox theme
 ```git clone https://github.com/ege/tmux-gruvbox ~/.config/tmux/tmux-gruvbox```  
 
 ## vim-tmux-navigator (seamless tmux and vim navigation)
-```git clone https://github.com/christoomey/vim-tmux-navigator ~/.local/share/nvim/site/pack/plugins/start/gruvbox```  
+```git clone https://github.com/christoomey/vim-tmux-navigator ~/.local/share/nvim/site/pack/plugins/start/vim-tmux-navigator```  
 ```cp ~/.local/share/nvim/site/pack/plugins/start/vim-tmux-navigator/vim-tmux-navigator.tmux ~/.config/tmux/vim-tmux-navigator.tmux```   
 
 ## vimux (interact with tmux from vim)
@@ -94,3 +95,8 @@ install starship from package manager
 install kitty
 install gruvbox theme
 ```git clone https://github.com/wdomitrz/kitty_gruvbox_theme ~/.config/kitty/kitty_gruvbox_theme```  
+
+### Skan
+retrieve skan release there https://github.com/ckipp01/skan
+put the binary in /usr/bin
+
