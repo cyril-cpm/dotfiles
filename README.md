@@ -11,6 +11,8 @@
 * kitty (customizable terminal)
 * Lazygit (TUI Git interface)
 * Skan (kanban)
+* smart pio (custom platformio project handling for neovim)
+* nvim-dap (debug programs with nvim)
 
 ## Installation
 
@@ -100,3 +102,16 @@ install gruvbox theme
 retrieve skan release there https://github.com/ckipp01/skan
 put the binary in /usr/bin
 
+### Lazygit
+```sudo dnf copr enable dejan/lazygit
+sudo dnf install lazygit```  
+
+### Smart Pio
+```git clone git@github.com:cyril-cpm/smart_pio.nvim ~/smart_pio.nvim  
+ln -s ~/smart_pio.nvim/ .local/share/nvim/site/pack/plugins/start/smart_pio.nvim```  
+
+### Nvim-DAP
+```git clone https://codeberg.org/mfussenegger/nvim-dap.git ~/.config/nvim/pack/plugins/start/nvim-dap```  
+
+## Python
+```git clone https://github.com/mfussenegger/nvim-dap-python ~/.config/nvim/pack/plugins/start/nvim-dap-python```  
