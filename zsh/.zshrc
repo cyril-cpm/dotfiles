@@ -1,5 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
-export COLOR_MODE='light'
+export COLOR_MODE='dark'
 
 if [[ -z $TMUX ]];
 then
