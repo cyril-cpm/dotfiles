@@ -1,30 +1,30 @@
 export XDG_CONFIG_HOME=$HOME/.config
 export COLOR_MODE='dark'
 
-# if [[ -z $TMUX ]];
-# then
-# 	local pushDotfiles() {
-# 		git -C $HOME/dotfiles add $HOME/dotfiles/*
-# 		git -C $HOME/dotfiles commit -m "autoUpdateDotfiles"
-# 		git -C $HOME/dotfiles push
-# 	}
-#
-# 	local pushKanbanFiles() {
-# 		git -C $HOME/kanban add $HOME/kanban/*
-# 		git -C $HOME/kanban commit -m "autoUpdateKanbanFiles"
-# 		git -C $HOME/kanban push
-# 	}
-#
-# 	(git -C $HOME/dotfiles pull >> /dev/null &)
-# 	(git -C $HOME/kanban pull >> /dev/null &)
-#
-# 	tmux
-#
-# 	(pushDotfiles &)
-# 	(pushKanbanFiles &)
-#
-# 	exit
-# fi
+if [[ -z $TMUX ]];
+then
+	local pushDotfiles() {
+		git -C $HOME/dotfiles add $HOME/dotfiles/*
+		git -C $HOME/dotfiles commit -m "autoUpdateDotfiles"
+		git -C $HOME/dotfiles push
+	}
+
+	local pushKanbanFiles() {
+		git -C $HOME/kanban add $HOME/kanban/*
+		git -C $HOME/kanban commit -m "autoUpdateKanbanFiles"
+		git -C $HOME/kanban push
+	}
+
+	(git -C $HOME/dotfiles pull >> /dev/null &)
+	(git -C $HOME/kanban pull >> /dev/null &)
+
+	tmux
+
+	(pushDotfiles &)
+	(pushKanbanFiles &)
+
+	exit
+fi
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
