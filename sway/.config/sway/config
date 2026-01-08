@@ -226,6 +226,11 @@ bindsym $mod+r mode "resize"
 #GESTURE
 bindgesture --exact hold:1 exec $term
 
+#VIRTUAL KEYBOARD
+exec wvkbd-custom --hidden
+
+bindsym $mod+m exec pkill -USR2 wvkbd-custom
+
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
 #  - /etc/sway/config.d
