@@ -1,4 +1,9 @@
 
+-- Set color scheme when open Vim
+vim.cmd.colorscheme("cybrvim")
+vim.go.background = "dark"
+-- vim.go.termguicolors = true
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -106,11 +111,6 @@ require("nvim-treesitter.configs").setup {
 	ensure_installed = { "c", "lua", "python", "cpp" }, -- adapte à tes langages
 	highlight = { enable = true },
 }
-
--- Set color scheme when open Vim
-vim.cmd.colorscheme("cybrvim")
--- vim.go.background = "dark"
--- vim.go.termguicolors = true
 
 -- Telescope
 local t = require("telescope")

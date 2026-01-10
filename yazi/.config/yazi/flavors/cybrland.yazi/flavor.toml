@@ -8,41 +8,41 @@
 # : Manager {{{
 
 [mgr]
-cwd = { fg = "red" }
+cwd = { fg = "#F24848" }
 
 # Hovered
-hovered = { bg = "red", fg = "black" }
-preview_hovered = { fg = "red", bg = "lightred" }
+hovered = { bg = "#F24848", fg = "#331215" }
+preview_hovered = { fg = "#A130F2", bg = "#3061F2" }
 
 # Find
-find_keyword  = { fg = "yellow", bold = true, italic = true, underline = true }
-find_position = { fg = "magenta", bg = "reset", bold = true, italic = true }
+find_keyword  = { fg = "#F2D230", bold = true, italic = true, underline = true }
+find_position = { fg = "#A130F2", bg = "reset", bold = true, italic = true }
 
 # Symlink
 symlink_target = { italic = true }
 
 # Marker
-marker_copied   = { fg = "green",  bg = "green" }
-marker_cut      = { fg = "yellow", bg = "yellow" }
-marker_marked   = { fg = "magenta", bg = "magenta" }
-marker_selected = { fg = "red", bg = "red" }
+marker_copied   = { fg = "#30F291",  bg = "#30F291" }
+marker_cut      = { fg = "#F2D230", bg = "#F2D230" }
+marker_marked   = { fg = "#A130F2", bg = "#A130F2" }
+marker_selected = { fg = "#F24848", bg = "#F24848" }
 
 # Count
-count_copied   = { fg = "green", bg = "lightgreen" }
-count_cut      = { fg = "yellow", bg = "lightyellow" }
-count_selected = { fg = "red", bg = "lightred", bold = true }
+count_copied   = { bg = "#30F291", fg = "#0C3423" }
+count_cut      = { bg = "#F2D230", fg = "#332D10" }
+count_selected = { fg = "#331215", bg = "#F24848", bold = true }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "lightred" }
+border_style  = { fg = "#F24848" }
 
 # Highlighting
 syntect_theme = "/dev/null"
 
 [indicator]
-preview = { fg = "black", bg = "red" }
-parent =  { fg = "red", bg = "lightred" }
-current = { fg = "black", bg = "red" }
+preview = { fg = "black", bg = "#F24848" }
+parent =  { fg = "black", bg = "#F24848" }
+current = { fg = "black", bg = "#F24848" }
 padding = { open = "", close = "" }
 
 # : }}}
@@ -51,8 +51,8 @@ padding = { open = "", close = "" }
 # : Tabs {{{
 
 [tabs]
-active   = { fg = "black", bg = "green", bold = true }
-inactive = { fg = "green", bg = "lightgreen" }
+active   = { fg = "black", bg = "#30F291", bold = true }
+inactive = { fg = "#30F291", bg = "#0C3423" }
 
 # Separator
 sep_inner = { open = "", close = "" }
@@ -64,16 +64,16 @@ sep_outer = { open = "", close = "" }
 # : Mode {{{
 
 [mode]
-normal_main = { fg = "black", bg = "red", bold = true }
-normal_alt  = { fg = "red", bg = "lightred" }
+normal_main = { fg = "black", bg = "#F24848", bold = true }
+normal_alt  = { fg = "#F24848", bg = "#F24848" }
 
 # Select mode
-select_main = { fg = "black", bg = "cyan", bold = true }
-select_alt  = { fg = "cyan", bg = "lightcyan" }
+select_main = { fg = "black", bg = "#29BECC", bold = true }
+select_alt  = { fg = "#29BECC", bg = "#0B292F" }
 
 # Unset mode
-unset_main = { fg = "black", bg = "blue", bold = true }
-unset_alt  = { fg = "blue", bg = "lightblue" }
+unset_main = { fg = "black", bg = "#3061F2", bold = true }
+unset_alt  = { fg = "#3061F2", bg = "#0C1737" }
 
 # : }}}
 
@@ -86,16 +86,16 @@ sep_left  = { open = "", close = "" }
 sep_right = { open = "", close = "" }
 
 # Permissions
-perm_sep   = { fg = "red" }
-perm_type  = { fg = "green" }
-perm_read  = { fg = "cyan" }
-perm_write = { fg = "yellow" }
-perm_exec  = { fg = "green" }
+perm_sep   = { fg = "#F24848" }
+perm_type  = { fg = "#30F291" }
+perm_read  = { fg = "#29BECC" }
+perm_write = { fg = "#F2D230" }
+perm_exec  = { fg = "#30F291" }
 
 # Progress
 progress_label  = { bold = true }
-progress_normal = { fg = "blue", bg = "lightblue" }
-progress_error  = { fg = "yellow", bg = "lightyellow" }
+progress_normal = { bg = "#3061F2", fg = "#0C1737" }
+progress_error  = { bg = "#F2D230", fg = "#332D10" }
 
 # : }}}
 
@@ -105,11 +105,11 @@ progress_error  = { fg = "yellow", bg = "lightyellow" }
 [which]
 cols            = 3
 mask            = { bg = "black" }
-cand            = { fg = "cyan" }
-rest            = { fg = "green" }
-desc            = { fg = "red" }
+cand            = { fg = "#29BECC" }
+rest            = { fg = "#30F291" }
+desc            = { fg = "#F24848" }
 separator       = "  "
-separator_style = { fg = "lightcyan" }
+separator_style = { fg = "#0B292F" }
 
 # : }}}
 
@@ -117,12 +117,12 @@ separator_style = { fg = "lightcyan" }
 # : Confirmation {{{
 
 [confirm]
-border     = { fg = "yellow", bg = "black" }
-title      = { fg = "yellow" }
+border     = { fg = "#F2D230", bg = "black" }
+title      = { fg = "#F2D230" }
 body       = {}
-list       = { fg = "yellow" }
-btn_yes    = { fg = "black", bg = "yellow" }
-btn_no     = { fg = "yellow", bg = "lightyellow" }
+list       = { fg = "#F2D230" }
+btn_yes    = { fg = "black", bg = "#F2D230" }
+btn_no     = { fg = "#F2D230", bg = "#332D10" }
 btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 
 # : }}}
@@ -131,12 +131,12 @@ btn_labels = [ "  [Y]es  ", "  (N)o  " ]
 # : Spotter {{{
 
 [spot]
-border = { fg = "green" }
-title  = { fg = "green" }
+border = { fg = "#30F291" }
+title  = { fg = "#30F291" }
 
 # Table
-tbl_col  = { fg = "blue" }
-tbl_cell = { fg = "yellow", reversed = true }
+tbl_col  = { fg = "#3061F2" }
+tbl_cell = { fg = "#F2D230", reversed = true }
 
 # : }}}
 
@@ -144,9 +144,9 @@ tbl_cell = { fg = "yellow", reversed = true }
 # : Notification {{{
 
 [notify]
-title_info  = { fg = "green" }
-title_warn  = { fg = "yellow" }
-title_error = { fg = "red" }
+title_info  = { fg = "#30F291" }
+title_warn  = { fg = "#F2D230" }
+title_error = { fg = "#F24848" }
 
 # Icons
 icon_info  = ""
@@ -159,8 +159,8 @@ icon_error = ""
 # : Picker {{{
 
 [pick]
-border   = { fg = "blue" }
-active   = { fg = "magenta", bold = true }
+border   = { fg = "#3061F2" }
+active   = { fg = "#A130F2", bold = true }
 inactive = {}
 
 # : }}}
@@ -169,7 +169,7 @@ inactive = {}
 # : Input {{{
 
 [input]
-border   = { fg = "red" }
+border   = { fg = "#F24848" }
 title    = {}
 value    = {}
 selected = { reversed = true }
@@ -180,7 +180,7 @@ selected = { reversed = true }
 # : Completion {{{
 
 [cmp]
-border   = { fg = "blue" }
+border   = { fg = "#3061F2" }
 active   = { reversed = true }
 inactive = {}
 
@@ -195,9 +195,9 @@ icon_command = ""
 # : Task manager {{{
 
 [tasks]
-border  = { fg = "blue" }
+border  = { fg = "#3061F2" }
 title   = {}
-hovered = { fg = "magenta", bold = true }
+hovered = { fg = "#A130F2", bold = true }
 
 # : }}}
 
@@ -205,8 +205,8 @@ hovered = { fg = "magenta", bold = true }
 # : Help menu {{{
 
 [help]
-on      = { fg = "cyan" }
-run     = { fg = "magenta" }
+on      = { fg = "#29BECC" }
+run     = { fg = "#A130F2" }
 desc    = {}
 hovered = { reversed = true, bold = true }
 footer  = { fg = "black", bg = "white" }
@@ -217,37 +217,37 @@ footer  = { fg = "black", bg = "white" }
 # : File-specific styles {{{
 
 [filetype]
-directory = { fg = "magenta" }
-file = { fg = "red" }
+directory = { fg = "#A130F2" }
+file = { fg = "#F24848" }
 
 rules = [
 	# Images
-	#{ mime = "image/*", fg = "yellow" },
+	#{ mime = "image/*", fg = "#F2D230" },
 
 	# Media
-	#{ mime = "{audio,video}/*", fg = "magenta" },
+	#{ mime = "{audio,video}/*", fg = "#A130F2" },
 
 	# Archives
 	{ mime = "application/{zip,rar,7z*,tar,gzip,xz,zstd,bzip*,lzma,compress,archive,cpio,arj,xar,ms-cab*}", fg = "white" },
 
 	# Documents
-	{ mime = "application/{pdf,doc,rtf}", fg = "cyan" },
+	{ mime = "application/{pdf,doc,rtf}", fg = "#29BECC" },
 
 	# Empty files
 	{ mime = "inode/empty", fg = "white" },
 
 	# Special files
-	{ url = "*", is = "orphan", fg = "magenta"},
-	{ url = "*", is = "exec"  , fg = "green" },
+	{ url = "*", is = "orphan", fg = "#A130F2"},
+	{ url = "*", is = "exec"  , fg = "#30F291" },
 
 	# Dummy files
-	{ url = "*", is = "dummy", bg = "red" },
-	{ url = "*/", is = "dummy", bg = "red" },
+	{ url = "*", is = "dummy", bg = "#F24848" },
+	{ url = "*/", is = "dummy", bg = "#F24848" },
 
 	# Fallback
-	{ url = "*", fg = "cyan" },
-	{ url = "*/", fg = "red" },
-	{ url = "*", fg = "red", weight = 9999 }
+	{ url = "*", fg = "#29BECC" },
+	{ url = "*/", fg = "#F24848" },
+	{ url = "*", fg = "#F24848", weight = 9999 }
 ]
 
 # : }}}
@@ -952,7 +952,7 @@ conds = [
 	{ if = "dummy", text = "" },
 
 	# Fallback
-	{ if = "dir", text = "", fg = "red" },
+	{ if = "dir", text = "", fg = "#F24848" },
 	{ if = "exec", text = "" },
 	{ if = "!dir", text = "" },
 ]
