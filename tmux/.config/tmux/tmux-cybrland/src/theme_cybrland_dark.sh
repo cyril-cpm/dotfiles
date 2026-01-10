@@ -63,9 +63,9 @@ theme_set_dark() {
   tmux_append_seto "status-left" "#[bg=${col_bg3},fg=${col_fg3}] ${_left_status_a} #[bg=${col_bg1},fg=${col_bg3},nobold,noitalics,nounderscore]"
 
   # right status
-  # local _status_right_bg=${col_bg1}
-  # if [[ "$_statusbar_alpha" == "true" ]]; then _status_right_bg="default"; fi
-  # tmux_append_seto "status-right" "#[bg=${_status_right_bg},fg=${col_bg2},nobold,nounderscore,noitalics]#[bg=${col_bg2},fg=${col_fg4}] ${_right_status_x}  ${_right_status_y} #[bg=${col_bg2},fg=${col_fg3},nobold,noitalics,nounderscore]#[bg=${col_fg3},fg=${col_bg1}] ${_right_status_z}"
+  local _status_right_bg=${col_bg1}
+  if [[ "$_statusbar_alpha" == "true" ]]; then _status_right_bg="default"; fi
+  tmux_append_seto "status-right" "#[bg=${_status_right_bg},fg=${col_bg2},nobold,nounderscore,noitalics]#[bg=${col_bg2},fg=${col_fg4}] ${_right_status_x}  ${_right_status_y} #[bg=${col_bg2},fg=${col_fg3},nobold,noitalics,nounderscore]#[bg=${col_fg3},fg=${col_bg1}] ${_right_status_z}"
 
   # current window
   local _current_window_status_format_bg=${col_bg1}
