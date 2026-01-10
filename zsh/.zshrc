@@ -1,5 +1,5 @@
 export XDG_CONFIG_HOME=$HOME/.config
-export COLOR_MODE=$(cat ~/.colormode)
+
 
 if [[ -z $TMUX ]];
 then
@@ -53,6 +53,12 @@ export PYTHONPATH=$HOME/Settingator/src
 export PATH=$PATH:$HOME/AppImages/
 
 export EDITOR=$(which nvim)
+
+export FZF_DEFAULT_OPTS="\
+  --color=fg:#F24848,fg+:#F24848,bg:-1,bg+:#331215 \
+  --color=hl:#29BECC,hl+:#F2D230,info:#3061F2,marker:#29BECC \
+  --color=prompt:#29BECC,spinner:#3061F2,pointer:#F24848,header:#4D5A80 \
+  --color=border:#631F21,label:#ffffff,query:#29BECC"
 
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
