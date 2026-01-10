@@ -4,6 +4,10 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+# Appearence
+default_border pixel 1
+client.focused #F24848 #331215 #F24848
+client.unfocused #331215 #331215 #631F21
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
