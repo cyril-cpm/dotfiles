@@ -108,9 +108,9 @@ require("nvim-treesitter.configs").setup {
 }
 
 -- Set color scheme when open Vim
-vim.cmd.colorscheme("gruvbox")
-vim.go.background = os.getenv("COLOR_MODE")
-vim.go.termguicolors = true
+vim.cmd.colorscheme("cybrvim")
+-- vim.go.background = "dark"
+-- vim.go.termguicolors = true
 
 -- Telescope
 local t = require("telescope")
