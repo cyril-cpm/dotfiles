@@ -24,9 +24,9 @@ readonly DEFAULT_THEME="dark256"
 readonly DEFAULT_STATUSBAR_ALPHA='false'
 # defaults for theme option (with color interpolation)
 readonly DEFAULT_LEFT_STATUS_A='#S'
-readonly DEFAULT_RIGHT_STATUS_X='%Y-%m-%d'
-readonly DEFAULT_RIGHT_STATUS_Y='%H:%M'
-readonly DEFAULT_RIGHT_STATUS_Z='#h'
+readonly DEFAULT_RIGHT_STATUS_X=''
+readonly DEFAULT_RIGHT_STATUS_Y=''
+readonly DEFAULT_RIGHT_STATUS_Z=''
 
 main() {
   TMUX_CMDS=() # clear
@@ -65,16 +65,16 @@ main() {
 
   local _status_left _status_right _window_status_current_format _window_status_format
   _status_left_a=$(tmux_get_option "$TMUX_CYBRLAND_LEFT_STATUS_A" "$DEFAULT_LEFT_STATUS_A")
-  _status_right_x=$(tmux_get_option "$TMUX_CYBRLAND_RIGHT_STAUTS_X" "$DEFAULT_RIGHT_STATUS_X")
-  _status_right_y=$(tmux_get_option "$TMUX_CYBRLAND_RIGHT_STAUTS_Y" "$DEFAULT_RIGHT_STATUS_Y")
-  _status_right_z=$(tmux_get_option "$TMUX_CYBRLAND_RIGHT_STAUTS_Z" "$DEFAULT_RIGHT_STATUS_Z")
-
+  # _status_right_x=$(tmux_get_option "$TMUX_CYBRLAND_RIGHT_STAUTS_X" "$DEFAULT_RIGHT_STATUS_X")
+  # _status_right_y=$(tmux_get_option "$TMUX_CYBRLAND_RIGHT_STAUTS_Y" "$DEFAULT_RIGHT_STATUS_Y")
+  # _status_right_z=$(tmux_get_option "$TMUX_CYBRLAND_RIGHT_STAUTS_Z" "$DEFAULT_RIGHT_STATUS_Z")
+  #
   local _theme_args
   _theme_args=(
     "$_status_left_a"
-    "$_status_right_x"
-    "$_status_right_y"
-    "$_status_right_z"
+    # "$_status_right_x"
+    # "$_status_right_y"
+    # "$_status_right_z"
     "$_statusbar_alpha"
   )
 
