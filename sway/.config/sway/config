@@ -53,7 +53,7 @@ output * bg ~/.config/sway/wallpaper.jpg fill #FFFFFF
 # Example configuration:
 #
 #
-bindsym XF86PowerOff exec systemctl suspend
+bindsym --locked XF86PowerOff exec systemctl suspend
 
 # exec swayidle -w \
 #          timeout 30 "$lock_cmd" \
