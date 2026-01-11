@@ -47,7 +47,7 @@ return {
 -- BASICS
 	fg  = "#F24848", --(re0)
 	bg  = "#030408", --(no0)
-	sel = "#0D1120", --(re0)
+	sel = "#631F21", --(re0)
 	menu = nil,
 -- BLACK
   	no0 = "#030408",

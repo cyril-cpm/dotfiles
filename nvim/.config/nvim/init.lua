@@ -217,7 +217,7 @@ end
 -- LUALINE
 require('lualine').setup{
 	options = {
-		theme = 'gruvbox',
+		theme = 'cybrland',
 
 	},
 	sections = {

@@ -64,7 +64,7 @@ vicmd_symbol = "[󰆤](fg:ye0)"
 format = "$symbol"
 
 [time]
-disabled = false
+disabled = true
 time_format = "%R" # Hour:Minute Format
 style = "fg:cy0 bg:cy2"
 format = '[](fg:cy2)[ $time ]($style)[](fg:cy2)'
