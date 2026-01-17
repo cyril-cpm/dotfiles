@@ -27,7 +27,7 @@
 	// 	"on-scroll-threshold": 1,
 	// 	"modules-left": [
 	// 		"custom/arch",
-	// 		"custom/arrow-left-re0",
+	// 		"custom/arrow-left-gr0",
 	// 		"sway/workspaces",
 	// 		"custom/arrow-left-no1",
 	// 		"custom/updates"
@@ -70,16 +70,16 @@
 		"on-scroll-threshold": 1,
 		"modules-left": [
 			"custom/arch",
-			"custom/arrow-left-re0",
+			"custom/arrow-left-gr0",
 			"sway/workspaces",
 			"custom/arrow-left-no1"
 		],
 		"modules-center": [
 			"custom/arrow-right-no1",
 			"clock#date",
-			"custom/arrow-right-re0",
+			"custom/arrow-right-gr0",
 			"sway/window",
-			"custom/arrow-left-re0",
+			"custom/arrow-left-gr0",
 			"clock#time",
 			"custom/arrow-left-no1"
 		],
