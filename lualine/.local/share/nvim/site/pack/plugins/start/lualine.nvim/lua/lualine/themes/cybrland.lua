@@ -19,8 +19,8 @@ local colors = {
 
 return {
   normal = {
-	a = { bg = colors.re0, fg = colors.re2, gui = 'bold' },
-	b = { bg = colors.re2, fg = colors.re0 },
+	a = { bg = colors.gr0, fg = colors.gr2, gui = 'bold' },
+	b = { bg = colors.gr2, fg = colors.gr0 },
 	c = { bg = colors.no0, fg = colors.wh0 },
   },
   insert = {
@@ -39,13 +39,13 @@ return {
 	c = { bg = colors.no0, fg = colors.wh0 },
   },
   command = {
-	a = { bg = colors.gr0, fg = colors.gr2, gui = 'bold' },
-	b = { bg = colors.gr2, fg = colors.gr0 },
+	a = { bg = colors.re0, fg = colors.re2, gui = 'bold' },
+	b = { bg = colors.re2, fg = colors.re0 },
 	c = { bg = colors.no0, fg = colors.wh0 },
   },
   inactive = {
-	a = { bg = colors.no0, fg = colors.wh0, gui = 'bold' },
-	b = { bg = colors.no0, fg = colors.wh0 },
-	c = { bg = colors.no0, fg = colors.wh0 },
+	a = { bg = colors.gr2, fg = colors.wh0, gui = 'bold' },
+	b = { bg = colors.gr2, fg = colors.wh0 },
+	c = { bg = colors.gr2, fg = colors.wh0 },
   },
 }
