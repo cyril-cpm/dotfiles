@@ -67,9 +67,13 @@ function y() {
 	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
 	rm -f -- "$tmp"
 }
+
+function hist() {
+	$(cat ~/.histfile | fzf)
+}
+
 alias :q=exit
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
 
-alias hist=$(cat ~/.histfile | fzf)
