@@ -72,4 +72,4 @@ alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
 
-alias $(cat ~/.histfile | fzf)
+alias hist=$(cat ~/.histfile | fzf)
