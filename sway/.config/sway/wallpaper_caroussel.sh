@@ -1,5 +1,7 @@
 #!/bin/bash
 
+notify-send "starting carrousell"
+
 # CONFIGURATION : "nom_fichier:mode:couleur_fond"
 # Modes disponibles pour swaybg : stretch, fill, fit, center, tile
 WALLPAPERS=(
@@ -8,7 +10,7 @@ WALLPAPERS=(
 )
 
 # Dossier où se trouvent les images
-DIR="$XDG_CONFIG_HOME/sway"
+DIR="$HOME/.config/sway"
 
 # Intervalle en secondes (ex: 300 pour 5 min)
 INTERVAL=300
@@ -26,7 +28,7 @@ while true; do
         pkill swaybg
         swaybg -i "$DIR/$FILE" -m "$MODE" -c "$BGCOLOR" &
     else
-        echo "Erreur : Le fichier $DIR/$FILE est introuvable."
+        notify-send "Erreur : Le fichier $DIR/$FILE est introuvable."
     fi
 
     sleep $INTERVAL
