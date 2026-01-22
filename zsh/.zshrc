@@ -71,3 +71,5 @@ alias :q=exit
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
+
+alias $(cat ~/.histfile | fzf)
