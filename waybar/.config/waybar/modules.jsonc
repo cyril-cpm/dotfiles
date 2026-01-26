@@ -109,7 +109,7 @@
 		}
 	},
 	"clock#date": {
-		"format": "{:%Y/%m/%d}",
+		"format": "{:%d/%m/%Y}",
 		"tooltip-format": "<tt><small>{calendar}</small></tt>",
 		"calendar": {
 			"mode": "month",
@@ -121,14 +121,14 @@
 	},
 	/* CPU USAGE */
 	"cpu": {
-		"on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh scratchpad-btop 'kitty --class scratchpad-btop btop' scratchpad-large",
+		"on-click": "kitty btop",
 		"format": " {usage}%",
 		"tooltip-format": "CPU",
 		"interval": 2
 	},
 	"temperature#cpu": {
 		"critical-threshold": 90,
-		"on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh scratchpad-btop 'kitty --class scratchpad-btop btop' scratchpad-large",
+		"on-click": "kitty btop",
 		"hwmon-path": "/sys/class/hwmon/hwmon4/temp1_input",
 		"format-critical": "{icon} {temperatureC}°C",
 		"format": "{icon} {temperatureC}°C",
@@ -165,7 +165,7 @@
 	/* RAM USAGE */
 	"memory": {
 		"format": " {}%",
-		"on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh scratchpad-btop 'kitty --class scratchpad-btop btop' scratchpad-large",
+		"on-click": "kitty btop",
 		"tooltip-format": "RAM",
 		"interval": 2
 	},

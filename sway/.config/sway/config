@@ -230,13 +230,14 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 
-#GESTURE
-bindgesture --exact hold:1 exec $term
-
 #VIRTUAL KEYBOARD
 exec wvkbd-custom --hidden
 
+#GESTURE
 bindsym $mod+m exec source $HOME/gestureScript/gesture-script.sh && toggle_keyboard
+
+#WLOGOUT
+bindsym $mod+Escape exec wlogout
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d
