@@ -173,7 +173,7 @@
 	"network": {
 		"format-wifi": "",
 		"format-ethernet": "",
-		"on-click": "~/.config/hypr/scripts/toggle_scratchpad.sh nm-connection-editor 'nm-connection-editor' scratchpad-large",
+		"on-click": "nm-connection-editor",
 		"tooltip-format-wifi": "Network: <b>{essid}</b>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}GHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#eed49f'> {bandwidthDownBytes}</span> <span foreground='#b7bdf8'> {bandwidthUpBytes}</span>",
 		"tooltip-format-ethernet": "Network: <b>{essid}</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>\n<span foreground='#eed49f'> {bandwidthDownBytes}</span> <span foreground='#b7bdf8'> {bandwidthUpBytes}</span>",
 		"format-linked": "󰈀 {ifname} (No IP)",
@@ -198,7 +198,8 @@
 	"custom/arch": {
 		"format": "  ",
 		"tooltip": false,
-		"on-click": "~/.config/rofi/scripts/powermenu/powermenu",
+		"on-click": "wlogout",
+		// "on-click": "~/.config/rofi/scripts/powermenu/powermenu",
 		"on-click-right": "rofi -show drun"
 	},
 	/* MUSIC */
@@ -281,7 +282,8 @@
 			"(.*)Steam": "Steam 󰓓",
 			"zsh": "Terminal"
 		},
-		"separate-outputs": false
+		"separate-outputs": false,
+		"on-click": "source ~/gestureScript/gesture-script.sh; toggle_keyboard;"
 	},
 	/* WORKSPACES */
 	"sway/workspaces": {
