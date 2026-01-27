@@ -1,7 +1,5 @@
 #!/bin/bash
 
-notify-send "starting carrousell"
-
 # CONFIGURATION : "nom_fichier:mode:couleur_fond"
 # Modes disponibles pour swaybg : stretch, fill, fit, center, tile
 WALLPAPERS=(
