@@ -201,7 +201,7 @@ blink.setup {
 local capabilities = blink.get_lsp_capabilities()
 -- LSP
 vim.lsp.config('clangd', {
-	cmd = { 'clangd', '--background-index'},
+	cmd = { '/home/cpm/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd', '--background-index'},
 	capabilities = capabilities,
 })
 
