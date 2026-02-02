@@ -1,0 +1,10 @@
+profile tablet {
+	output "LG Display 0x0564 Unknown" enable transform 0
+	exec echo tablet >> /tmp/kanshiProfile
+}
+
+profile desktopDock {
+	output "LG Display 0x0564 Unknown" enable transform 90
+	output "Philips Consumer Electronics Company 227ELH AU31215002102" enable
+	exec echo desktopDock >> /tmp/kanshiProfile
+}
