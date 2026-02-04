@@ -29,7 +29,10 @@ $rust\
 $scala\
 $docker_context\
 $time\
-$line_break$character
+$line_break\
+${custom.git_last_commit_date}\
+${custom.git_last_commit_message}\
+$character
 """
 
 palette = "cybr_ship"
@@ -122,6 +125,18 @@ format = "[](fg:pu2)[ $symbol $branch ]($style)[](fg:pu2)"
 [git_status]
 style = "bg:pu0 fg:pu2"   # hlavní blok
 format = "[](fg:pu0)[ $all_status$ahead_behind ]($style)[](fg:pu0)"
+
+[custom.git_last_commit_date]
+command = 'git log -1 --pretty="format:%ad" --date="format:%d-%m-%Y"'
+when =  'git rev-parse --is-inside-work-tree 2> /dev/null'
+style = "bg:bl2 fg:bl0"
+format = "[ $output ]($style)[](bg:gr2 fg:bl2)"
+
+[custom.git_last_commit_message]
+command = 'git log -1 --pretty="format:%B"'
+when =  'git rev-parse --is-inside-work-tree 2> /dev/null'
+style = "bg:gr2 fg:gr0"
+format = "[ $output ]($style)[](fg:gr2)\n"
 
 [c]
 symbol = ""
