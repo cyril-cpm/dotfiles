@@ -1,15 +1,20 @@
+output "LG Display 0x0564 Unknown" {
+	alias $builtin
+}
+
 profile tablet {
-	output "LG Display 0x0564 Unknown" {
+	output $builtin {
 		enable
 		position 0,0
-		transform normal
+		transform 180
 		scale 1
 	}
 	exec echo tablet >> /tmp/kanshiProfile
+	exec swaymsg "output $builtin bg /home/cpm/.config/sway/solar_H.jpg fill"
 }
 
 profile desktopDock {
-	output "LG Display 0x0564 Unknown" {
+	output $builtin {
 		enable
 		transform 90
 		scale 1.25
@@ -22,4 +27,5 @@ profile desktopDock {
 		position 0,0
 	}
 	exec echo desktopDock >> /tmp/kanshiProfile
+	exec swaymsg output $builtin bg /home/cpm/.config/sway/solar_V.jpg fill
 }

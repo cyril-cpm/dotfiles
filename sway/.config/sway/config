@@ -1,4 +1,11 @@
 corner_radius 99
+blur enable
+gaps inner 100
+gaps outer 50
+smart_gaps off
+shadows enable
+shadow_offset 50 50
+shadow_color #000000FF
 
 # Default config for sway
 #
@@ -40,7 +47,8 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # output * bg ~/.config/sway/wallpaper_fit.png fit #000000
 # output * bg ~/.config/sway/pip.jpg stretch #000000
 # output * bg /usr/share/backgrounds/default.jxl fill
-exec $HOME/.config/sway/wallpaper_caroussel.sh
+# exec $HOME/.config/sway/wallpaper_caroussel.sh
+output * bg ~/.config/sway/solar.jpg fit
 #
 # Example configuration:
 #
