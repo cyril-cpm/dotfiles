@@ -1,11 +1,14 @@
-corner_radius 99
+corner_radius 8
 blur enable
-gaps inner 100
-gaps outer 50
+blur_passes 4
+blur_radius 10
+blur_saturation 1.5
+gaps inner 16
+gaps outer 8
 smart_gaps off
-shadows enable
-shadow_offset 50 50
-shadow_color #000000FF
+# shadows enable
+# shadow_offset 50 50
+# shadow_color #000000FF
 
 # Default config for sway
 #
@@ -249,7 +252,7 @@ bindsym $mod+m exec source $HOME/gestureScript/gesture-script.sh && toggle_keybo
 #WLOGOUT
 bindsym $mod+Escape exec wlogout
 
-# exec kanshi
+exec_always kanshi
 
 # Include configs from 3 locations:
 #  - /usr/share/sway/config.d

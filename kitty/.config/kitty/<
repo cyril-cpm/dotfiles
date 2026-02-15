@@ -1,6 +1,6 @@
 
 background #f0f9ff
-background_opacity 0.45
+background_opacity 0.65
 foreground #1A1A1A
 text_composition_strategy 2.0 25
 font_hinting heacy
