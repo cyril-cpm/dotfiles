@@ -1,3 +1,5 @@
+corner_radius 99
+
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
