@@ -76,4 +76,4 @@ alias :q=exit
 alias la="ls -a"
 alias ll="ls -l"
 alias lla="ls -la"
-
+alias get_idf=". $HOME/esp/esp-idf/export.sh"
