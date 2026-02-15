@@ -48,7 +48,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # output * bg ~/.config/sway/pip.jpg stretch #000000
 # output * bg /usr/share/backgrounds/default.jxl fill
 # exec $HOME/.config/sway/wallpaper_caroussel.sh
-output * bg ~/.config/sway/solar.jpg fit
+# output * bg ~/.config/sway/solar.jpg fit
 #
 # Example configuration:
 #
