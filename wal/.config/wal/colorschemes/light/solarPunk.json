@@ -1,0 +1,27 @@
+{
+    "checksum": "99019b72c74f7f6b8b81de9cc26788f3",
+    "alpha": "45",
+    "special": {
+        "background": "#d2fdd5",
+        "foreground": "#1A1A1A",
+        "cursor": "#c4c4c3"
+    },
+    "colors": {
+       "color0": "#1A1A1A",
+        "color1": "#a63d40",
+        "color2": "#2d5a27",
+        "color3": "#92400e",
+        "color4": "#1e3a8a",
+        "color5": "#7a4a8d",
+        "color6": "#0e7490",
+        "color7": "#888888",
+        "color8": "#4d4d4d",
+        "color9": "#d74e52",
+        "color10": "#387132",
+        "color11": "#b45309",
+        "color12": "#2563eb",
+        "color13": "#af7ac5",
+        "color14": "#0891b2",
+        "color15": "#000000"
+    }
+}
