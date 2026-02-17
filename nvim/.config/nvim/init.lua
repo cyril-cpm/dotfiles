@@ -1,7 +1,7 @@
 
 -- Set color scheme when open Vim
-vim.cmd.colorscheme("cybrvim")
-vim.go.background = "dark"
+vim.cmd.colorscheme("solarpunk")
+vim.go.background = "light"
 -- vim.go.termguicolors = true
 
 -- Set <space> as the leader key
