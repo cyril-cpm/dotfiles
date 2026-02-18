@@ -12,34 +12,34 @@ end
 
 -- Fenêtre et base
 hl("Normal",           { fg = "{foreground}", bg = "NONE" })
-hl("NormalFloat",      { fg = "{foreground}", bg = "{gray_light}" }) -- Fenêtres flottantes (LSP)
+hl("NormalFloat",      { fg = "{foreground}", bg = "{gray_lt}" }) -- Fenêtres flottantes (LSP)
 hl("FloatBorder",      { fg = "{color4}" })
-hl("ColorColumn",      { bg = "{gray_light}" })
+hl("ColorColumn",      { bg = "{gray_lt}" })
 hl("Cursor",           { fg = "{background}", bg = "{cursor}" })
-hl("CursorLine",       { bg = "{green_light}" })
-hl("CursorColumn",     { bg = "{gray_light}" })
+hl("CursorLine",       { bg = "{green_lt}" })
+hl("CursorColumn",     { bg = "{gray_lt}" })
 
 -- Bordures et Séparateurs
-hl("VertSplit",        { fg = "{gray_light}" })
-hl("WinSeparator",     { fg = "{gray_light}" })
+hl("VertSplit",        { fg = "{gray_lt}" })
+hl("WinSeparator",     { fg = "{gray_lt}" })
 
 -- Menus et Listes
-hl("Pmenu",            { fg = "{foreground}", bg = "{gray_light}" })
+hl("Pmenu",            { fg = "{foreground}", bg = "{gray_lt}" })
 hl("PmenuSel",         { fg = "{background}", bg = "{color4}", bold = true })
-hl("PmenuSbar",        { bg = "{gray_light}" })
+hl("PmenuSbar",        { bg = "{gray_lt}" })
 hl("PmenuThumb",       { bg = "{color8}" })
 hl("Question",         { fg = "{color4}" })
-hl("QuickFixLine",     { bg = "{blue_light}" })
+hl("QuickFixLine",     { bg = "{blue_lt}" })
 
 -- Recherches et Sélection
-hl("Visual",           { bg = "{blue_light}" })
+hl("Visual",           { bg = "{blue_lt}" })
 hl("Search",           { fg = "{background}", bg = "{color3}", bold = true })
 hl("IncSearch",        { fg = "{background}", bg = "{color1}" })
 hl("CurSearch",        { fg = "{background}", bg = "{color1}" })
 
 -- Messages et État
-hl("StatusLine",       { fg = "{foreground}", bg = "{green_light}" })
-hl("StatusLineNC",     { fg = "{color8}", bg = "{gray_light}" }) -- Fenêtre inactive
+hl("StatusLine",       { fg = "{foreground}", bg = "{green_lt}" })
+hl("StatusLineNC",     { fg = "{color8}", bg = "{gray_lt}" }) -- Fenêtre inactive
 hl("WildMenu",         { fg = "{background}", bg = "{color4}" })
 hl("ErrorMsg",         { fg = "{color1}", bold = true })
 hl("WarningMsg",       { fg = "{color3}", bold = true })
@@ -50,10 +50,10 @@ hl("MoreMsg",          { fg = "{color4}", bold = true })
 hl("LineNr",           { fg = "{color8}" })
 hl("CursorLineNr",     { fg = "{color2}", bold = true })
 hl("SignColumn",       {{ bg = "NONE" }})
-hl("Folded",           { fg = "{color8}", bg = "{gray_light}" })
+hl("Folded",           { fg = "{color8}", bg = "{gray_lt}" })
 hl("FoldColumn",       { fg = "{color8}" })
 
-hl("Comment",          { fg = "{color7}", italic = true })
+hl("Comment",          { fg = "{color8}", italic = true })
 hl("Constant",         { fg = "{color14}" })
 hl("String",           { fg = "{color2}" })
 hl("Character",        { fg = "{color2}" })
@@ -82,8 +82,8 @@ hl("StorageClass",     { fg = "{color3}" })
 hl("Structure",        { fg = "{color6}" })
 hl("Typedef",          { fg = "{color0}" })
 
-hl("Special",          { fg = "{red_light}" })
-hl("SpecialChar",      { fg = "{red_light}" })
+hl("Special",          { fg = "{color1}", bold = true })
+hl("SpecialChar",      { fg = "{color1}", bold = true })
 hl("Tag",              { fg = "{color3}" })
 hl("Delimiter",        { fg = "{color15}" })
 hl("Debug",            { fg = "{color1}" })
@@ -96,7 +96,7 @@ hl("Error",            { fg = "{color1}", reverse = true })
 hl("Todo",             { fg = "{background}", bg = "{color3}", bold = true })
 
 hl("@variable",            { fg = "{foreground}" })
-hl("@variable.builtin",    { fg = "{magenta_light}", italic = true })
+hl("@variable.builtin",    { fg = "{magenta_lt}", italic = true })
 hl("@variable.parameter",  { fg = "{foreground}", italic = true })
 hl("@field",               { fg = "{color6}" })
 hl("@property",            { fg = "{color6}" })
@@ -118,7 +118,7 @@ hl("@punctuation.bracket", { fg = "{color15}" })
 hl("@punctuation.delimiter",{ fg = "{color15}" })
 
 -- Python
-hl("@attribute.python",    { fg = "{yellow_light}" }) -- Décorateurs
+hl("@attribute.python",    { fg = "{yellow_lt}" }) -- Décorateurs
 
 -- Markup (Markdown)
 hl("@text.title",          { fg = "{color4}", bold = true })
@@ -140,13 +140,13 @@ hl("DiagnosticUnderlineInfo",  { undercurl = true, sp = "{color4}" })
 hl("DiagnosticUnderlineHint",  { undercurl = true, sp = "{color14}" })
 
 -- LSP
-hl("LspReferenceText",     { bg = "{gray_light}" })
-hl("LspReferenceRead",     { bg = "{gray_light}" })
-hl("LspReferenceWrite",    { bg = "{gray_light}" })
+hl("LspReferenceText",     { bg = "{gray_lt}" })
+hl("LspReferenceRead",     { bg = "{gray_lt}" })
+hl("LspReferenceWrite",    { bg = "{gray_lt}" })
 
-hl("DiffAdd",              { fg = "{color2}", bg = "{green_light}" })
-hl("DiffChange",           { fg = "{color3}", bg = "{yellow_light}" })
-hl("DiffDelete",           { fg = "{color1}", bg = "{red_light}" })
+hl("DiffAdd",              { fg = "{color2}", bg = "{green_lt}" })
+hl("DiffChange",           { fg = "{color3}", bg = "{yellow_lt}" })
+hl("DiffDelete",           { fg = "{color1}", bg = "{red_lt}" })
 hl("DiffText",             { fg = "{background}", bg = "{color4}" })
 
 hl("SignColumnSB",         {{ bg = "NONE" }})
