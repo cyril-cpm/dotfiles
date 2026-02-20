@@ -2,7 +2,7 @@ profile tablet {
 	output "LG Display 0x0564 Unknown" {
 		enable
 		position 0,0
-		transform 180
+		transform normal
 		scale 1
 	}
 	exec echo tablet >> /tmp/kanshiProfile
