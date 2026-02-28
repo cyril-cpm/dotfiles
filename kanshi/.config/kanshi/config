@@ -24,5 +24,5 @@ profile desktopDock {
 	}
 	exec echo desktopDock >> /tmp/kanshiProfile
 	exec swaymsg output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_V.jpg fill
-	exec swaymsg output \"Philips Consumer Electronics Company 227ELH AU31215002102\" bg /home/cpm/.config/sway/solar_H.jpg fill
+	exec swaymsg output \"Philips Consumer Electronics Company 227ELH AU31215002102\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
 }
