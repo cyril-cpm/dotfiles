@@ -26,3 +26,22 @@ profile desktopDock {
 	exec swaymsg output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_V.jpg fill
 	exec swaymsg output \"Philips Consumer Electronics Company 227ELH AU31215002102\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
 }
+
+profile videoProj {
+	output "LG Display 0x0564 Unknown" {
+		enable
+		position 1920,0
+		transform normal
+		scale 1
+	}
+	output "MS Telematica MStar Demo 0x00000001" {
+		enable
+		scale 1
+		transform normal
+		position 0,0
+	}
+	exec echo tablet >> /tmp/kanshiProfile
+	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
+	exec swaymsg "output \"MS Telematica MStar Demo 0x00000001\" bg /home/cpm/.config/sway/solar_H.jpg fill"
+}
+
