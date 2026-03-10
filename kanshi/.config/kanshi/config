@@ -45,3 +45,19 @@ profile videoProj {
 	exec swaymsg "output \"MS Telematica MStar Demo 0x00000001\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 }
 
+profile chambre {
+	output "LG Display 0x0564 Unknown" {
+		enable
+		position 1920,0
+		transform normal
+		scale 1
+	}
+	output "SANTAK CORP. S2-TEK TV SN-000000001" {
+		enable
+		scale 1.5
+		transform normal
+		position 0,0
+	}
+	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
+	exec swaymsg "output \"SANTAK CORP. S2-TEK TV SN-000000001\" bg /home/cpm/.config/sway/solar_H.jpg fill"
+}
