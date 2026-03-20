@@ -40,7 +40,7 @@ profile videoProj {
 		transform normal
 		position 0,0
 	}
-	exec echo tablet >> /tmp/kanshiProfile
+	exec echo videoProj >> /tmp/kanshiProfile
 	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 	exec swaymsg "output \"MS Telematica MStar Demo 0x00000001\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 }
@@ -60,4 +60,23 @@ profile chambre {
 	}
 	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 	exec swaymsg "output \"SANTAK CORP. S2-TEK TV SN-000000001\" bg /home/cpm/.config/sway/solar_H.jpg fill"
+	exec echo chambre >> /tmp/kanshiProfile
+}
+
+profile kikine {
+	output "LG Display 0x0564 Unknown" {
+		enable
+		scale 1
+		transform normal
+		position 0,1440
+	}
+	output "HP Inc. HP X27qc CNC14429XD" {
+		enable
+		scale 1
+		transform normal
+		position 0,0
+	}
+	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
+	exec swaymsg "output \"HP Inc. HP X27qc CNC14429XD\" bg /home/cpm/.config/sway/solar_H.jpg fill"
+	exec echo kikine >> /tmp/kanshiProfile
 }
