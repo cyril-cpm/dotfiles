@@ -1,3 +1,6 @@
 [submodule "nvim/.local/share/nvim/site/pack/plugins/start/csvview.nvim"]
 	path = nvim/.local/share/nvim/site/pack/plugins/start/csvview.nvim
 	url = https://github.com/hat0uma/csvview.nvim
+[submodule "nvim/.config/nvim/pack/plugins/start/toggleterm.nvim"]
+	path = nvim/.config/nvim/pack/plugins/start/toggleterm.nvim
+	url = https://github.com/akinsho/toggleterm.nvim

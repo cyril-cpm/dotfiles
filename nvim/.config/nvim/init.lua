@@ -391,6 +391,10 @@ require('csvview').setup({
   },
 })
 
+require("toggleterm").setup()
+local wf = require("workflow")
+wf.setup()
+
 -- ALL CUSTOM KEYMAP --
 -- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})
 -- lhs is the shortcut and rhs is the key sequence to be applied
@@ -409,9 +413,34 @@ vim.keymap.set('', 'tl', ':Telescope diagnostics<Enter>') -- See LSP diagnostics
 vim.keymap.set('', 'mc', ':CsvViewToggle<Enter>') -- Toggle Csv View
 
 vim.keymap.set('', 'fy', function() vim.diagnostic.open_float() end) -- Open buble with diagnostics at cursor
-vim.keymap.set('', 'fh', ':SPioSelectEnv<Enter>') -- Select pio environment
-vim.keymap.set('', 'fj', ':SPioBuild<Enter>') -- Build pio project
-vim.keymap.set('', 'fk', ':SPioUpload<Enter>') -- Upload pio project
+-- vim.keymap.set('', 'fh', ':SPioSelectEnv<Enter>') -- Select pio environment
+-- vim.keymap.set('', 'fj', ':SPioBuild<Enter>') -- Build pio project
+-- vim.keymap.set('', 'fk', ':SPioUpload<Enter>') -- Upload pio project
+
+-- ESPIDF-LAZYGIT HANDLING WITH TOGGLETERM
+vim.keymap.set('', 'fh', function() wf.execBuildFlash() end)
+vim.keymap.set('', 'fj', function() wf.execMonitor() end)
+vim.keymap.set('', 'fk', function() wf.execBuildFlashMonitor() end)
+
+vim.keymap.set('', 'ffh', function() wf.toggleBFM() end)
+vim.keymap.set('', 'ffj', function() wf.toggleMC() end)
+vim.keymap.set('', 'ffk', function() wf.toggleLG() end)
+vim.keymap.set('', 'ffl', function() wf.toggleLG() end)
+
+vim.keymap.set('', 'fij', function() wf.moveMCVert() end)
+vim.keymap.set('', 'fuj', function() wf.moveMCHori() end)
+vim.keymap.set('', 'foj', function() wf.moveMCFloat() end)
+
+vim.keymap.set('', 'fil', function() wf.moveLGVert() end)
+vim.keymap.set('', 'ful', function() wf.moveLGHori() end)
+vim.keymap.set('', 'fol', function() wf.moveLGFloat() end)
+vim.keymap.set('', 'fil', function() wf.moveLGVert() end)
+vim.keymap.set('', 'fuk', function() wf.moveLGHori() end)
+vim.keymap.set('', 'fok', function() wf.moveLGFloat() end)
+
+vim.keymap.set('', 'fih', function() wf.moveBFMVert() end)
+vim.keymap.set('', 'fuh', function() wf.moveBFMHori() end)
+vim.keymap.set('', 'foh', function() wf.moveBFMFloat() end)
 
 vim.keymap.set('', 'gh', ':DapStepOut<Enter>') -- Debugger step out
 vim.keymap.set('', 'gj', ':DapStepOver<Enter>') -- Debugger step over
