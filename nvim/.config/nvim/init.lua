@@ -421,11 +421,15 @@ vim.keymap.set('', 'fy', function() vim.diagnostic.open_float() end) -- Open bub
 vim.keymap.set('', 'fh', function() wf.execBuildFlash() end)
 vim.keymap.set('', 'fj', function() wf.execMonitor() end)
 vim.keymap.set('', 'fk', function() wf.execBuildFlashMonitor() end)
+vim.keymap.set('', 'fl', function() wf.execFullClean() end)
+vim.keymap.set('', 'fp', function() wf.selectPort() end)
 
 vim.keymap.set('', 'ffh', function() wf.toggleBFM() end)
 vim.keymap.set('', 'ffj', function() wf.toggleMC() end)
 vim.keymap.set('', 'ffk', function() wf.toggleLG() end)
 vim.keymap.set('', 'ffl', function() wf.toggleLG() end)
+
+vim.keymap.set('', '<esc>', function() wf.closeActive() end)
 
 vim.keymap.set('', 'fij', function() wf.moveMCVert() end)
 vim.keymap.set('', 'fuj', function() wf.moveMCHori() end)
