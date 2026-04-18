@@ -111,6 +111,7 @@ M.execBuildFlashMonitor = function ()
 	else
 
 		BFM:exec("idf.py "  .. " --port " .. port .. " flash monitor")
+		BFM.isExecutingMonitor = true
 	end
 end
 
