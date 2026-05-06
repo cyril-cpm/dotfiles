@@ -203,6 +203,7 @@ local capabilities = blink.get_lsp_capabilities()
 vim.lsp.config('clangd', {
 	cmd = { '/home/cpm/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd', '--background-index'},
 	capabilities = capabilities,
+	root_dir = vim.uv.cwd(),
 })
 
 vim.lsp.enable('clangd')
