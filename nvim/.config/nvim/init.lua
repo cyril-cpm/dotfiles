@@ -51,7 +51,7 @@ vim.o.confirm = true
 -- [[ Set up keymaps ]] See `:h vim.keymap.set()`, `:h mapping`, `:h keycodes`
 
 -- Use <Esc> to exit terminal mode
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+vim.keymap.set('t', '<A-Esc>', '<C-\\><C-n>')
 
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
 vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h')
@@ -430,7 +430,8 @@ vim.keymap.set('', 'ffj', function() wf.toggleMC() end)
 vim.keymap.set('', 'ffk', function() wf.toggleLG() end)
 vim.keymap.set('', 'ffl', function() wf.toggleLG() end)
 
-vim.keymap.set('', '<esc>', function() wf.closeActive() end)
+vim.keymap.set('', '<esc>', function() wf.closeActive(true) end)
+-- vim.keymap.set('', '<C-Esc>', function() wf.closeActive(true) end)
 
 vim.keymap.set('', 'fij', function() wf.moveMCVert() end)
 vim.keymap.set('', 'fuj', function() wf.moveMCHori() end)

@@ -132,7 +132,7 @@ M.toggleLG = function()
 	LG:toggle()	
 end
 
-M.closeActive = function()
+M.closeActive = function(force)
 	if BFM:is_open() then
 		BFM:close()
 	end
@@ -141,7 +141,7 @@ M.closeActive = function()
 		MC:close()
 	end
 
-	if LG:is_open() then
+	if LG:is_open() and force then
 		LG:close()
 	end
 end
