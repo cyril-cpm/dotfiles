@@ -16,7 +16,7 @@
 	hl("FloatBorder",      { fg = "{color4}" })
 	hl("ColorColumn",      { bg = "{gray_light}" })
 	hl("Cursor",           { fg = "{background}", bg = "{cursor}" })
-	hl("CursorLine",       { bg = "{green_light}" })
+	hl("CursorLine",       { bg = "{bg1}" })
 	hl("CursorColumn",     { bg = "{gray_light}" })
 
 	-- Bordures et Séparateurs
@@ -32,7 +32,7 @@
 	hl("QuickFixLine",     { bg = "{blue_light}" })
 
 	-- Recherches et Sélection
-	hl("Visual",           { bg = "{blue_light}" })
+	hl("Visual",           { bg = "{bg1}" })
 	hl("Search",           { fg = "{background}", bg = "{color3}", bold = true })
 	hl("IncSearch",        { fg = "{background}", bg = "{color1}" })
 	hl("CurSearch",        { fg = "{background}", bg = "{color1}" })
