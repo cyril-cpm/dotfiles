@@ -42,6 +42,7 @@ compinit
 
 eval "$(zoxide init zsh --cmd cd)"
 
+export STARSHIP_CONFIG="$HOME/.cache/wal/starship_colors.conf:$HOME/.config/starship.toml"
 eval "$(starship init zsh)"
 
 export PIO_CONFIGS=$HOME/custom_platformio_ini
