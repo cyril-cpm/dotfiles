@@ -1,0 +1,202 @@
+scan_timeout = 100
+
+format = """
+$username\
+[](fg:color1 bg:color3)\
+$directory\
+[](fg:color3)\
+$git_branch\
+$git_status\
+$c\
+$elixir\
+$elm\
+$golang\
+$gradle\
+$haskell\
+$java\
+$julia\
+$nim\
+$rust\
+$scala\
+$docker_context\
+$time\
+$line_break\
+${custom.git_last_commit_date}\
+${custom.git_last_commit_message}\
+$character
+"""
+
+palette = "wal"
+
+[palettes.wal]
+
+
+color0 = "{color0}"
+color1 = "{color1}"
+color2 = "{color2}"
+color3 = "{color3}"
+color4 = "{color4}"
+color5 = "{color5}"
+color6 = "{color6}"
+color7 = "{color7}"
+color8 = "{color8}"
+color9 = "{color9}"
+color10 = "{color10}"
+color11 = "{color11}"
+color12 = "{color12}"
+color13 = "{color13}"
+color14 = "{color14}"
+color15 = "{color15}"
+orange_l = "{orange_l}"
+orange_d = "{orange_d}"
+red_light =     "{red_light}"
+green_light =   "{green_light}"
+yellow_light =  "{yellow_light}"
+blue_light =    "{blue_light}"
+magenta_light = "{magenta_light}"
+cyan_light =    "{cyan_light}"
+gray_light =    "{gray_light}"
+bg0 = "{bg0}"
+bg1 = "{bg1}"
+bg2 = "{bg2}"
+background = "{background}"
+foreground = "{foreground}"
+
+[username]
+show_always = true
+style_user = "bg:color1 fg:foreground"
+format = '[ $user ]($style)'
+disabled = false
+
+[shell]
+style = "bg:color3 fg:foreground"
+format = '[ $indicator ]($style)'
+disabled = false
+
+[directory]
+style = "fg:foreground bg:color3"
+format = "[ $path ](bold $style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[line_break]
+disabled = false
+
+[jobs]
+disabled = true
+
+[character]
+success_symbol = "[❯ ](fg:color2)"
+error_symbol = "[❯](fg:color1)"
+vicmd_symbol = "[❯](fg:color3)"
+format = "$symbol"
+
+[time]
+disabled = true
+time_format = "%R" # Hour:Minute Format
+style = "fg:cy0 bg:cy2"
+format = '[](fg:cy2)[ $time ]($style)[](fg:cy2)'
+
+[custom.time_arrow]
+disabled = false
+command = 'echo -n ""'
+when = 'true'
+style = "fg:cy2"
+format = '[ $output]($style)'
+
+[custom.transient_time]
+disabled = false
+command = 'date "+%H:%M"'
+when = 'true'
+style = "fg:background bg:color9"
+format = '[ $output ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:color5 fg:foreground"
+format = "[](fg:color5)[ $symbol $branch ]($style)[](fg:color5)"
+
+[git_status]
+style = "bg:color6 fg:foreground"   # hlavní blok
+format = "[](fg:color6)[ $all_status$ahead_behind ]($style)[](fg:color6)"
+
+[custom.git_last_commit_date]
+command = 'git log -1 --pretty="format:%ad" --date="format:%d-%m-%Y"'
+when =  'git rev-parse --is-inside-work-tree 2> /dev/null'
+style = "bg:color4 fg:foreground"
+format = "[ $output ]($style)[](bg:color2 fg:color4)"
+
+[custom.git_last_commit_message]
+command = 'git log -1 --pretty="format:%B"'
+when =  'git rev-parse --is-inside-work-tree 2> /dev/null'
+style = "bg:color2 fg:foreground"
+format = "[ $output ]($style)[](bg:background fg:color2)\n"
+
+[c]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[](fg:pu2 bg:bl2)[ $symbol ($version) ]($style)"
+
+[cpp]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[ $symbol ($version) ]($style)"
+
+[elm]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[ $symbol ($version) ]($style)"
+
+[golang]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[ $symbol ($version) ]($style)"
+
+[gradle]
+style = "bg:cy2 fg:cy0"
+format = "[](fg:bl2 bg:cy2)[ $symbol ($version) ]($style)"
+
+[julia]
+symbol = ""
+style = "bg:cy2 fg:cy0"
+format = "[ $symbol ($version) ]($style)"
+
+[java]
+symbol = ""
+style = "bg:or2 fg:or0"
+format = "[](fg:cy2 bg:or2)[ $symbol ($version) ]($style)"
+
+[rust]
+symbol = ""
+style = "bg:or2 fg:or0"
+format = "[ $symbol ($version) ]($style)"
+
+[python]
+symbol = ""
+style = "bg:ye2 fg:ye0"
+format = "[](fg:or2 bg:ye2)[ $symbol ($version) ]($style)"
+
+[nim]
+symbol = "󰆥"
+style = "bg:ye2 fg:ye0"
+format = "[ $symbol ($version) ]($style)"
+
+[haskell]
+symbol = ""
+style = "bg:pu2 fg:pu0"
+format = "[](fg:ye2 bg:pu2)[ $symbol ($version) ]($style)"
+
+[elixir]
+symbol = ""
+style = "bg:pu2 fg:pu0"
+format = "[ $symbol ($version) ]($style)"
+
+[scala]
+symbol = ""
+style = "bg:re2 fg:re0"
+format = "[](fg:pu2 bg:re2)[ $symbol ($version) ]($style)"
+
+[docker_context]
+symbol = ""
+style = "bg:bl2 fg:bl0"
+format = "[](fg:re2 bg:bl2)[ $symbol $context ]($style)"
