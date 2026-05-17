@@ -208,21 +208,16 @@ vim.lsp.config('clangd', {
 
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
--- SMART PIO
-smart_pio = require("smart_pio")
 
-local function SmartPioEnv()
-		
-end
 
 -- LUALINE
 require('lualine').setup{
 	options = {
-		theme = 'cybrland',
+		theme = 'gruvbox',
 
 	},
 	sections = {
-		lualine_x = { smart_pio.get_current_env },
+		-- lualine_x = { smart_pio.get_current_env },
 	},
 }
 
@@ -392,9 +387,22 @@ require('csvview').setup({
   },
 })
 
+-- TOGGLETERM
 require("toggleterm").setup()
+
+-- CUSTOM workflow
 local wf = require("workflow")
 wf.setup()
+
+-- TOGGLE OVERLENGTH
+local overlength = require("toggle-overlength")
+overlength.setup({
+	column_length = 90,
+	ctermbg = "blue",
+	guibg = global_colors.color9,
+})
+
+overlength.toggle_hi_overlength()
 
 -- ALL CUSTOM KEYMAP --
 -- vim.keymap.set({mode}, {lhs}, {rhs}, {opts})

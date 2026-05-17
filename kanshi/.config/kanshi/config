@@ -27,6 +27,24 @@ profile desktopDock {
 	exec swaymsg output \"Philips Consumer Electronics Company 227ELH AU31215002102\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
 }
 
+profile desktopWhite {
+	output "LG Display 0x0564 Unknown" {
+		enable
+		transform normal
+		scale 1.0
+		position 0,1440
+	}
+	output "JPN IPS32QHD 00000" {
+		enable
+		transform normal
+		scale 1.0
+		position 0,0
+	}
+	exec swaymsg output \"JPN IPS32QHD 00000\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
+	exec swaymsg output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
+	exec echo desktopWhite >> /tmp/kanshiProfile
+}
+
 profile videoProj {
 	output "LG Display 0x0564 Unknown" {
 		enable
