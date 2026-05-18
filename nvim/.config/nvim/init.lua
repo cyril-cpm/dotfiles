@@ -1,9 +1,9 @@
 
--- Set color scheme when open Vim
+-- -- Set color scheme when open Vim
 vim.cmd.colorscheme("solarpunk")
 vim.go.background = "light"
--- vim.go.termguicolors = true
-
+-- -- vim.go.termguicolors = true
+--
 -- Set <space> as the leader key
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -201,7 +201,10 @@ blink.setup {
 local capabilities = blink.get_lsp_capabilities()
 -- LSP
 vim.lsp.config('clangd', {
-	cmd = { '/home/cpm/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd', '--background-index'},
+	cmd = {
+		'/home/cpm/.espressif/tools/esp-clang/esp-19.1.2_20250312/esp-clang/bin/clangd',
+		'--background-index',
+	},
 	capabilities = capabilities,
 	root_dir = vim.uv.cwd(),
 })
@@ -209,17 +212,57 @@ vim.lsp.config('clangd', {
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
 
-
 -- LUALINE
+function lualine_themes(color)
+	return {
+		a = {
+			bg = color,
+			fg = global_colors.foreground,
+			gui = "bold"
+		},
+		b = { bg = global_colors.bg2 },
+		c = { bg = global_colors.background },
+		x = { bg = global_colors.background },
+		y = { bg = global_colors.color5 },
+		z = { bg = global_colors.color6 }
+	}
+end
+
+vim.opt.showmode = false
+vim.opt.shortmess:append("S") -- Désactive le message "search count" natif
+vim.opt.cmdheight = 1
+
 require('lualine').setup{
 	options = {
-		theme = 'gruvbox',
-
+		theme = {
+			normal = lualine_themes(global_colors.color1),
+			insert = lualine_themes(global_colors.color4),
+			visual = lualine_themes(global_colors.color3),
+			command = lualine_themes(global_colors.color2),
+			replace = lualine_themes(global_colors.color5),
+			inactive = {
+				a = {
+					bg = global_colors.bg2,
+					fg = global_colors.foreground,
+				},
+				b = { bg = global_colors.bg2 },
+				c = { bg = global_colors.bg2 },
+			}
+		},
+		component_separators = { left = '', right = '' },
+		section_separators = { left = '', right = '' },
 	},
 	sections = {
-		-- lualine_x = { smart_pio.get_current_env },
+		lualine_a = {'mode'},
+		lualine_b = {'filename'},
+		lualine_c = {},
+		lualine_x = {'diagnostics'},
+		lualine_y = {'branch', 'diff'},
+		lualine_z = {'location', 'searchcount', 'selectioncount'},
 	},
 }
+
+
 
 -- DEBUGGER
 require("dap-python").setup("python3")
@@ -228,7 +271,8 @@ require("dap-python").setup("python3")
 require('csvview').setup({
   parser = {
     --- The number of lines that the asynchronous parser processes per cycle.
-    --- This setting is used to prevent monopolization of the main thread when displaying large files.
+    --- This setting is used to prevent monopolization of the main thread when displaying
+	--- large files.
     --- If the UI freezes, try reducing this value.
     --- @type integer
     async_chunksize = 50,

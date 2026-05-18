@@ -7,3 +7,6 @@
 [submodule "toggle-overlength"]
 	path = nvim/.config/nvim/pack/plugins/start/toggle-overlength.nvim
 	url = https://github.com/fouladi/toggle-overlength.nvim
+[submodule "lualine.nvim"]
+	path = nvim/.config/nvim/pack/plugins/start/lualine.nvim
+	url = https://github.com/nvim-lualine/lualine.nvim

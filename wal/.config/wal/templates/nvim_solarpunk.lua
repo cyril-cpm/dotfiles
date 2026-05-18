@@ -39,27 +39,29 @@
         gray_light =    "{gray_light}",
 		bg0 = "{bg0}",
 		bg1 = "{bg1}",
-		bg2 = "#d5c4a1"
+		bg2 = "{bg2}",
+		foreground = "{foreground}",
+		background = "{background}",
 
 	}
 
 	-- Fenêtre et base
 	hl("Normal",           { fg = "{foreground}", bg = "NONE" })
-	hl("NormalFloat",      { fg = "{foreground}", bg = "{gray_light}" }) -- Fenêtres flottantes (LSP)
+	hl("NormalFloat",      { fg = "{foreground}", bg = "{bg2}" }) -- Fenêtres flottantes (LSP)
 	hl("FloatBorder",      { fg = "{color4}" })
-	hl("ColorColumn",      { bg = "{gray_light}" })
+	hl("ColorColumn",      { bg = "{bg2}" })
 	hl("Cursor",           { fg = "{background}", bg = "{cursor}" })
 	hl("CursorLine",       { bg = "{bg1}" })
-	hl("CursorColumn",     { bg = "{gray_light}" })
+	hl("CursorColumn",     { bg = "{bg2}" })
 
 	-- Bordures et Séparateurs
-	hl("VertSplit",        { fg = "{gray_light}" })
-	hl("WinSeparator",     { fg = "{gray_light}" })
+	hl("VertSplit",        { fg = "{bg2}" })
+	hl("WinSeparator",     { fg = "{bg2}" })
 
 	-- Menus et Listes
-	hl("Pmenu",            { fg = "{foreground}", bg = "{gray_light}" })
+	hl("Pmenu",            { fg = "{foreground}", bg = "{bg2}" })
 	hl("PmenuSel",         { fg = "{background}", bg = "{color4}", bold = true })
-	hl("PmenuSbar",        { bg = "{gray_light}" })
+	hl("PmenuSbar",        { bg = "{bg2}" })
 	hl("PmenuThumb",       { bg = "{color8}" })
 	hl("Question",         { fg = "{color4}" })
 	hl("QuickFixLine",     { bg = "{blue_light}" })
@@ -71,8 +73,8 @@
 	hl("CurSearch",        { fg = "{background}", bg = "{color1}" })
 
 	-- Messages et État
-	hl("StatusLine",       { fg = "{foreground}", bg = "{green_light}" })
-	hl("StatusLineNC",     { fg = "{color8}", bg = "{gray_light}" }) -- Fenêtre inactive
+	hl("StatusLine",       { fg = "{foreground}", bg = "{background}" })
+	hl("StatusLineNC",     { fg = "{foreground}", bg = "{bg2}" }) -- Fenêtre inactive
 	hl("WildMenu",         { fg = "{background}", bg = "{color4}" })
 	hl("ErrorMsg",         { fg = "{color1}", bold = true })
 	hl("WarningMsg",       { fg = "{color3}", bold = true })
@@ -83,7 +85,7 @@
 	hl("LineNr",           { fg = "{color8}" })
 	hl("CursorLineNr",     { fg = "{color2}", bold = true })
 	hl("SignColumn",       {{ bg = "NONE" }})
-	hl("Folded",           { fg = "{color8}", bg = "{gray_light}" })
+	hl("Folded",           { fg = "{color8}", bg = "{bg2}" })
 	hl("FoldColumn",       { fg = "{color8}" })
 
 	hl("Comment",          { fg = "{color8}", italic = true })
@@ -173,9 +175,9 @@
 	hl("DiagnosticUnderlineHint",  { undercurl = true, sp = "{color14}" })
 
 	-- LSP
-	hl("LspReferenceText",     { bg = "{gray_light}" })
-	hl("LspReferenceRead",     { bg = "{gray_light}" })
-	hl("LspReferenceWrite",    { bg = "{gray_light}" })
+	hl("LspReferenceText",     { bg = "{bg2}" })
+	hl("LspReferenceRead",     { bg = "{bg2}" })
+	hl("LspReferenceWrite",    { bg = "{bg2}" })
 
 	hl("DiffAdd",              { fg = "{color2}", bg = "{green_light}" })
 	hl("DiffChange",           { fg = "{color3}", bg = "{yellow_light}" })
