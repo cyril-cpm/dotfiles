@@ -78,7 +78,7 @@ local LG = CustomTerm:new({
 
 local BFM = CustomTerm:new({
 					hidden = true,
-					direction = "horizontal",
+					direction = "float",
 					mode = 'n'
 				})
 
