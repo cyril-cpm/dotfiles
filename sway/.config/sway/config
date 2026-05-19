@@ -166,17 +166,48 @@ bindsym $mod+Control+s exec systemctl suspend
     bindsym $mod+underscore workspace number 8
     bindsym $mod+ccedilla workspace number 9
     bindsym $mod+agrave workspace number 10
-    # Move focused container to workspace
-    bindsym $mod+1 move container to workspace number 1
-    bindsym $mod+2 move container to workspace number 2
-    bindsym $mod+3 move container to workspace number 3
-    bindsym $mod+4 move container to workspace number 4
-    bindsym $mod+5 move container to workspace number 5
-    bindsym $mod+6 move container to workspace number 6
-    bindsym $mod+7 move container to workspace number 7
-    bindsym $mod+8 move container to workspace number 8
-    bindsym $mod+9 move container to workspace number 9
-    bindsym $mod+0 move container to workspace number 10
+
+	# Move focused container to workspace
+    bindsym $mod+1 exec \
+		swaymsg move container to workspace number 1 && \
+		swaymsg workspace number 1 \
+	
+    bindsym $mod+2 exec \
+		swaymsg move container to workspace number 2 && \
+		swaymsg workspace number 2
+
+    bindsym $mod+3 exec \
+		swaymsg move container to workspace number 3 && \
+		swaymsg workspace number 3
+
+    bindsym $mod+4 exec \
+		swaymsg move container to workspace number 4 && \
+		swaymsg workspace number 4
+
+    bindsym $mod+5 exec \
+		swaymsg move container to workspace number 5 && \
+		swaymsg workspace number 5
+
+    bindsym $mod+6 exec \
+		swaymsg move container to workspace number 6 && \
+		swaymsg workspace number 6
+
+    bindsym $mod+7 exec \
+		swaymsg move container to workspace number 7 && \
+		swaymsg workspace number 7
+
+    bindsym $mod+8 exec \
+		swaymsg move container to workspace number 8 && \
+		swaymsg workspace number 8
+
+    bindsym $mod+9 exec \
+		swaymsg move container to workspace number 9 && \
+		swaymsg workspace number 9
+
+    bindsym $mod+0 exec \
+		swaymsg move container to workspace number 0 && \
+		swaymsg workspace number 0
+
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 #
