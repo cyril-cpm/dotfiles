@@ -211,6 +211,13 @@ vim.lsp.config('clangd', {
 
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
+--
+-- TOGGLETERM
+require("toggleterm").setup()
+
+-- CUSTOM workflow
+local wf = require("workflow")
+wf.setup()
 
 -- LUALINE
 function lualine_themes(color)
@@ -255,7 +262,7 @@ require('lualine').setup{
 	sections = {
 		lualine_a = {'mode'},
 		lualine_b = {'filename'},
-		lualine_c = {},
+		lualine_c = { wf.printMode },
 		lualine_x = {'diagnostics'},
 		lualine_y = {'branch', 'diff'},
 		lualine_z = {'location', 'searchcount', 'selectioncount'},
@@ -431,13 +438,6 @@ require('csvview').setup({
   },
 })
 
--- TOGGLETERM
-require("toggleterm").setup()
-
--- CUSTOM workflow
-local wf = require("workflow")
-wf.setup()
-
 -- TOGGLE OVERLENGTH
 local overlength = require("toggle-overlength")
 overlength.setup({
@@ -475,7 +475,8 @@ vim.keymap.set('', 'fh', function() wf.execBuildFlash() end)
 vim.keymap.set('', 'fj', function() wf.execMonitor() end)
 vim.keymap.set('', 'fk', function() wf.execBuildFlashMonitor() end)
 vim.keymap.set('', 'fl', function() wf.execFullClean() end)
-vim.keymap.set('', 'fp', function() wf.selectPort() end)
+vim.keymap.set('', 'fp', function() wf.choosePort() end)
+vim.keymap.set('', 'fm', function() wf.toggleDualMode() end)
 
 vim.keymap.set('', 'ffh', function() wf.toggleBFM() end)
 vim.keymap.set('', 'ffj', function() wf.toggleMC() end)
