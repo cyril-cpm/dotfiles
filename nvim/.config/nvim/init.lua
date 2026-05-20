@@ -267,6 +267,20 @@ require('lualine').setup{
 		lualine_y = {'branch', 'diff'},
 		lualine_z = {'location', 'searchcount', 'selectioncount'},
 	},
+	tabline = {
+		lualine_a = {
+			{
+				'tabs',
+				mode = 1,
+				fmt = function(name, context)
+					if context.tabnr == 1 then
+						return "1: Code"
+					end
+					return tostring(context.tabnr) .. ": Devices"
+				end
+			}
+		},
+	},
 }
 
 

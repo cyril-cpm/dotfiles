@@ -11,6 +11,7 @@ local port = { value = nil }
 local left_port = { value = nil }
 local right_port = { value = nil }
 
+local ToggleTerminal = require("toggleterm.terminal")
 local Terminal = require("toggleterm.terminal").Terminal
 
 local CustomTerm = {}
@@ -48,19 +49,42 @@ function CustomTerm:switch_direction( direction)
 end
 
 
-function CustomTerm:exec(cmd, on_done_callback)
-	if on_done_callback then
-		self.on_done_callback = on_done_callback
+function CustomTerm:exec(args)
+	local command = args.command
+	local isMonitoring = args.isMonitoring
+	local on_done_callback = args.on_done_callback
+
+	if on_done_callback or isMonitoring then
+		command = string.format(
+			[[%s; nvim --server $NVIM --remote-send \
+			"<cmd>lua require('workflow')._trigger_callback(%d, $?)<cr>"]],
+			command,
+			self.id
+		)
+		if type(on_done_callback) == "function" then
+			self.on_done_callback = on_done_callback
+		end
 	end
 
 	if self.isExecutingMonitor then
+		self.monitoring_callback = function(self)
+			print(tostring(self.id))
+			
+			vim.defer_fn(function()
+				self:send(command)
+				if isMonitoring then
+					self.isExecutingMonitor = true
+				end
+
+			end, 900)
+		end
 		self:send("\x1d")
-		self.isExecutingMonitor = false
-		vim.defer_fn(function ()
-			self:send(cmd)
-		end, 300)
+
 	else
-		self:send(cmd)
+		self:send(command)
+		if isMonitoring then
+			self.isExecutingMonitor = true
+		end
 	end
 	
 	if not self:is_open() then
@@ -92,18 +116,6 @@ local BFM = CustomTerm:new({
 					float_opts = { border = "curved" },
 				})
 
-local BFM_LEFT = CustomTerm:new({
-					hidden = true,
-					direction = "tab",
-					mode = 'n',
-				})
-
-local BFM_RIGHT = CustomTerm:new({
-					hidden = true,
-					direction = "horizontal",
-					mode = 'n',
-				})
-
 local multi_mode = false
 local devices = {}
 
@@ -111,8 +123,6 @@ M.setup = function()
 	MC:spawn()
 	LG:spawn()
 	BFM:spawn()
-	BFM_LEFT:spawn()
-	BFM_RIGHT:spawn()
 end
 
 M.setNumberOfDevices = function(n)
@@ -129,7 +139,7 @@ M.setNumberOfDevices = function(n)
 
 		for i = 1, n do
 			local direction = "horizontal"
-			if i == 1 then
+			if i % 3 == 1 then
 				direction = "tab"
 			end
 
@@ -145,6 +155,10 @@ M.setNumberOfDevices = function(n)
 				}
 			)
 			devices[i].term:spawn()
+
+			if i % 3 == 1 then
+				vim.t.tabpage_name = "Devices"
+			end
 		end
 	end
 end
@@ -174,10 +188,44 @@ M.getDevicesUnsetPort = function()
 	return nil
 end
 
-M._trigger_callback = function(exit_code)
-	if BFM.on_done_callback then
-		BFM.on_done_callback(exit_code)
-		BFM.on_done_callback = nil
+M._trigger_callback = function(terminalID, exit_code)
+	term = ToggleTerminal.get(terminalID, true)
+
+	if term then
+		if term.isExecutingMonitor then
+			term.isExecutingMonitor = false
+			
+			if term.monitoring_callback then
+				term:monitoring_callback()
+				term.monitoring_callback = nil
+			end
+			
+		elseif type(term.on_done_callback) == "function" then
+			term:on_done_callback(exit_code)
+			term.on_done_callback = nil
+
+		end
+	else
+		print("terminal not found " .. tostring(terminalID))
+	end
+end
+
+M.selectDevicesPortBeforeAction = function(action, cmd)
+	local unsetDevicePort = M.getDevicesUnsetPort()
+
+	if unsetDevicePort then
+		M.selectPort(action, unsetDevicePort)
+		return false
+	else
+		return true
+	end
+end
+
+M.executeCommandOnDevices = function(args)
+	local commandToFormat = args.command
+	for i, device in ipairs(devices) do
+		args.command = string.format(commandToFormat, device.port.value)
+		device.term:exec(args)
 	end
 end
 
@@ -186,35 +234,22 @@ M.execBuildFlash = function ()
 		if not port.value then
 			M.selectPort(M.execBuildFlash, port)
 		else
-			BFM:exec("idf.py"  .. " --port " .. port.value .. " flash")
+			BFM:exec({ command = "idf.py --port " .. port.value .. " flash"})
 		end
-	else
-		local unsetDevicePort = M.getDevicesUnsetPort()
 
-		if unsetDevicePort then
-			M.selectPort(M.execBuildFlash, unsetDevicePort)
-		else
-			BFM:exec(
-				[[idf.py build; nvim --server $NVIM --remote-send \
-				"<cmd>lua require('workflow')._trigger_callback($?)<cr>"]],
-				
-				function(exit_code)
-					if exit_code == 0 then
-						BFM:close()
-
-						for i, device in ipairs(devices) do
-							device.term:exec(
-								"idf.py --port " .. device.port.value .. " flash"
-							)
-						end
-					else
-						print("error " .. tostring( exit_code))
-					end
-
-					vim.t.tabpage_name = "Multi Flash"
+	elseif M.selectDevicesPortBeforeAction(M.execBuildFlash) then
+		BFM:exec({
+			command = "idf.py build",
+			on_done_callback = function(self, exit_code)
+				if exit_code == 0 then
+					M.executeCommandOnDevices({
+						command = "idf.py --port %s flash"
+					})
+				else
+					print("error " .. tostring( exit_code))
 				end
-			)
-		end
+			end
+		})
 	end
 end
 
@@ -223,25 +258,16 @@ M.execMonitor = function ()
 		if not port.value then
 			M.selectPort(M.execMonitor, port)
 		else
-			BFM:exec("idf.py "  .. " --port " .. port.value .. " monitor")
-			BFM.isExecutingMonitor = true
+			BFM:exec({
+				command = "idf.py --port " .. port.value .. " monitor",
+				isMonitoring = true
+			})
 		end
-	else
-		if not left_port.value then
-			M.selectPort(M.dualMonitor, left_port)
-		end
-
-		if not right_port.value then
-			M.selectPort(M.dualMonitor, right_port)
-		end
-
-		if left_port.value and right_port.value then
-			BFM_LEFT:exec("idf.py "  .. " --port " .. left_port.value .. " monitor")
-			BFM_LEFT.isExecutingMonitor = true
-			BFM_RIGHT:exec("idf.py "  .. " --port " .. right_port.value .. " monitor")
-			BFM_RIGHT.isExecutingMonitor = true
-			vim.t.tabpage_name = "Dual Monitor"
-		end
+	elseif M.selectDevicesPortBeforeAction(M.execMonitor) then
+		M.executeCommandOnDevices({
+			command = "idf.py --port %s monitor",
+			isMonitoring = true
+		})
 	end
 end
 
@@ -251,34 +277,30 @@ M.execBuildFlashMonitor = function ()
 			M.selectPort(M.execBuildFlashMonitor, port)
 		else
 
-			BFM:exec("idf.py "  .. " --port " .. port.value .. " flash monitor")
-			BFM.isExecutingMonitor = true
+			BFM:exec({
+				command = "idf.py --port " .. port.value .. " flash monitor",
+				isMonitoring = true
+			})
 		end
-	else
-		if not left_port.value then
-			M.selectPort(M.dualMonitor, left_port)
-		end
-
-		if not right_port.value then
-			M.selectPort(M.dualMonitor, right_port)
-		end
-
-		if left_port.value and right_port.value then
-			BFM_LEFT:exec(
-				"idf.py "  .. " --port " .. left_port.value .. " flash monitor"
-			)
-			BFM_LEFT.isExecutingMonitor = true
-			BFM_RIGHT:exec(
-				"idf.py "  .. " --port " .. right_port.value .. " flash monitor"
-			)
-			BFM_LEFT.isExecutingMonitor = true
-			vim.t.tabpage_name = "Dual Monitor"
-		end
+	elseif M.selectDevicesPortBeforeAction(M.execBuildFlashMonitor) then
+		BFM:exec({
+			command = "idf.py build",
+			on_done_callback = function(self, exit_code)
+				if exit_code == 0 then
+					M.executeCommandOnDevices({
+						command = "idf.py --port %s flash monitor",
+						isMonitoring = true
+					})
+				else
+					print("error" .. tostring(exit_code))
+				end
+			end
+		})
 	end
 end
 
 M.execFullClean = function ()
-	BFM:exec("idf.py fullclean")
+	BFM:exec({ command = "idf.py fullclean" })
 end
 
 
