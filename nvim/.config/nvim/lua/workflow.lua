@@ -7,7 +7,7 @@ local action_state = require("telescope.actions.state")
 
 local M = {}
 
-local port = { value = nil }
+port = { value = nil }
 local left_port = { value = nil }
 local right_port = { value = nil }
 
@@ -396,7 +396,7 @@ end
 
 M.choosePort = function()
 	if not multi_mode then
-		M.selectPort(port)
+		M.selectPort(nil, port)
 
 	else
 		M.selectPort(left_port)
