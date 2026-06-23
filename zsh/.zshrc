@@ -52,7 +52,7 @@ alias py=python3
 export PYTHONPATH=$HOME/Settingator/src
 
 export PATH=$PATH:$HOME/AppImages/
-
+export PATH="$HOME/.local/bin:$PATH"
 export EDITOR=$(which nvim)
 
 export FZF_DEFAULT_OPTS="\
