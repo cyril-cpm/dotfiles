@@ -283,7 +283,8 @@ require('lualine').setup{
 	},
 }
 
-
+--- CLAUDE
+require("claudecode").setup()
 
 -- DEBUGGER
 require("dap-python").setup("python3")

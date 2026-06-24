@@ -10,3 +10,6 @@
 [submodule "lualine.nvim"]
 	path = nvim/.config/nvim/pack/plugins/start/lualine.nvim
 	url = https://github.com/nvim-lualine/lualine.nvim
+[submodule "claudecode"]
+	path = nvim/.config/nvim/pack/plugins/start/claudecode.nvim
+	url = https://github.com/coder/claudecode.nvim
