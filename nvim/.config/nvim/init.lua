@@ -212,7 +212,9 @@ vim.lsp.config('clangd', {
 
 vim.lsp.enable('clangd')
 vim.lsp.enable('pyright')
---
+
+vim.lsp.enable('qmlls')
+
 -- TOGGLETERM
 require("toggleterm").setup()
 
