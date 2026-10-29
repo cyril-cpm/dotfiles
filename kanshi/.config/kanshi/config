@@ -6,7 +6,6 @@ profile tablet {
 		scale 1
 	}
 	exec echo tablet > /tmp/kanshiProfile
-	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 }
 
 profile desktopDock {
@@ -23,8 +22,6 @@ profile desktopDock {
 		position 0,0
 	}
 	exec echo desktopDock > /tmp/kanshiProfile
-	exec swaymsg output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_V.jpg fill
-	exec swaymsg output \"Philips Consumer Electronics Company 227ELH AU31215002102\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
 }
 
 profile desktopWhite {
@@ -57,8 +54,6 @@ profile videoProj {
 		position 0,0
 	}
 	exec echo videoProj > /tmp/kanshiProfile
-	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
-	exec swaymsg "output \"MS Telematica MStar Demo 0x00000001\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 }
 
 profile chambre {
@@ -74,8 +69,6 @@ profile chambre {
 		transform normal
 		position 0,0
 	}
-	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
-	exec swaymsg "output \"SANTAK CORP. S2-TEK TV SN-000000001\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 	exec echo chambre > /tmp/kanshiProfile
 }
 
@@ -92,7 +85,5 @@ profile kikine {
 		transform normal
 		position 0,0
 	}
-	exec swaymsg "output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill"
-	exec swaymsg "output \"HP Inc. HP X27qc CNC14429XD\" bg /home/cpm/.config/sway/solar_H.jpg fill"
 	exec echo kikine > /tmp/kanshiProfile
 }
