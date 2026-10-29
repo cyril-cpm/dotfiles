@@ -3,12 +3,15 @@
 # CONFIGURATION : "nom_fichier:mode:couleur_fond"
 # Modes disponibles pour swaybg : stretch, fill, fit, center, tile
 WALLPAPERS=(
-    "pip.jpg:stretch:#000000"
-    "wallpaper.jpg:fill:#000000"
+    # "pip.jpg:stretch:#000000"
+    # "wallpaper.jpg:fill:#000000"
+	"pipo_gruvbox_colored.jpeg:fill:#000000"
+	"pipo_gruvbox_dark.jpeg:fill:#000000"
+	"pipo_gruvbox_light.jpeg:fill:#000000"
 )
 
 # Dossier où se trouvent les images
-DIR="$HOME/.config/sway"
+DIR="$HOME/Wallpaper/"
 
 # Intervalle en secondes (ex: 300 pour 5 min)
 INTERVAL=300

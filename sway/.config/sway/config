@@ -20,6 +20,7 @@ smart_gaps off
 default_border pixel 1
 client.focused #F24848 #331215 #F24848
 client.unfocused #331215 #331215 #631F21
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -50,7 +51,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 # output * bg ~/.config/sway/wallpaper_fit.png fit #000000
 # output * bg ~/.config/sway/pip.jpg stretch #000000
 # output * bg /usr/share/backgrounds/default.jxl fill
-# exec $HOME/.config/sway/wallpaper_caroussel.sh
+exec $HOME/.config/sway/wallpaper_caroussel.sh
 # output * bg ~/.config/sway/solar.jpg fit
 #
 # Example configuration:

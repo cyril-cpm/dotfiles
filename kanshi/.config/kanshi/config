@@ -40,8 +40,6 @@ profile desktopWhite {
 		scale 0.75
 		position 0,0
 	}
-	exec swaymsg output \"JPN IPS32QHD 00000\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
-	exec swaymsg output \"LG Display 0x0564\" bg /home/cpm/.config/sway/solar_H.jpg fill #ffffff
 	exec echo desktopWhite > /tmp/kanshiProfile
 }
 
