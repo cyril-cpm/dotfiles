@@ -29,7 +29,7 @@ profile desktopWhite {
 		enable
 		transform normal
 		scale 1.0
-		position 2560,0
+		position 3405,0
 	}
 	output "JPN IPS32QHD 00000" {
 		enable
