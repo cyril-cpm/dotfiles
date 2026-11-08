@@ -14,7 +14,7 @@ WALLPAPERS=(
 DIR="$HOME/Wallpaper/"
 
 # Intervalle en secondes (ex: 300 pour 5 min)
-INTERVAL=300
+INTERVAL=1800
 
 while true; do
     # Sélectionner une ligne au hasard dans le tableau
