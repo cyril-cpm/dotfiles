@@ -16,7 +16,7 @@ DIR="$HOME/Wallpaper/"
 # Intervalle en secondes (ex: 300 pour 5 min)
 INTERVAL=1800
 
-while true; do
+# while true; do
     # Sélectionner une ligne au hasard dans le tableau
     SELECTED=${WALLPAPERS[$RANDOM % ${#WALLPAPERS[@]}]}
 
@@ -32,5 +32,5 @@ while true; do
         notify-send "Erreur : Le fichier $DIR/$FILE est introuvable."
     fi
 
-    sleep $INTERVAL
-done
+    # sleep $INTERVAL
+# done
