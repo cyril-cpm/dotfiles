@@ -6,7 +6,8 @@
 		"cursor": "#ebdbb2"
 	},
 	"colors": {
-		"color0": "#282828",
+		"color0": "#fbf1c7",
+
 		"color1": "#cc241d",
 		"color2": "#98971a",
 		"color3": "#d79921",
@@ -14,17 +15,17 @@
 		"color5": "#b16286",
 		"color6": "#689d6a",
 		"color7": "#7c6f64",
+
 		"color8": "#928374",
+
 		"color9": "#9d0006",
 		"color10": "#79740e",
 		"color11": "#b57614",
 		"color12": "#076678",
 		"color13": "#8f3f71",
 		"color14": "#427b58",
-		"color15": "#ebdbb2",
-		"bg0": "#282828",
-		"bg1": "#3c3836",
-		"bg2": "#504945",
+		"color15": "#282828",
+
 		"dark0_hard": "#1d2021",
 		"dark0": "#282828",
 		"dark0_soft": "#32302f",
@@ -32,8 +33,6 @@
 		"dark2": "#504945",
 		"dark3": "#665c54",
 		"dark4": "#7c6f64",
-		"gray_245": "#928374",
-		"gray_244": "#928374",
 		"light0_hard": "#f9f5d7",
 		"light0": "#fbf1c7",
 		"light0_soft": "#f2e5bc",
@@ -41,6 +40,14 @@
 		"light2": "#d5c4a1",
 		"light3": "#bdae93",
 		"light4": "#a89984",
+
+		"gray_245": "#928374",
+		"gray_244": "#928374",
+
+		"bg0": "#fbf1c7",
+		"bg1": "#ebdbb2",
+		"bg2": "#d5c4a1",
+
 		"bright_red": "#fb4934",
 		"bright_green": "#b8bb26",
 		"bright_yellow": "#fabd2f",
@@ -48,6 +55,7 @@
 		"bright_purple": "#d3869b",
 		"bright_aqua": "#8ec07c",
 		"bright_orange": "#fe8019",
+
 		"neutral_red": "#cc241d",
 		"neutral_green": "#98971a",
 		"neutral_yellow": "#d79921",
@@ -55,6 +63,7 @@
 		"neutral_purple": "#b16286",
 		"neutral_aqua": "#689d6a",
 		"neutral_orange": "#d65d0e",
+
 		"faded_red": "#9d0006",
 		"faded_green": "#79740e",
 		"faded_yellow": "#b57614",

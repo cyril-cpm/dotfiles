@@ -13,30 +13,22 @@
 	global_colors = {
 		
 		color0 = "{color0}",
-	color1 = "{color1}",
-	color2 = "{color2}",
-	color3 = "{color3}",
-	color4 = "{color4}", 
-	color5 = "{color5}",
-	color6 = "{color6}",
-	color7 = "{color7}",
-	color8 = "{color8}",
-	color9 = "{color9}",
-	color10 = "{color10}",
-	color11 = "{color11}",
-	color12 = "{color12}",
-	color13 = "{color13}",
-	color14 = "{color14}",
-	color15 = "{color15}",
-		bright_orange = "{bright_orange}",
-		faded_orange = "{faded_orange}",
-	bright_red =	 "{bright_red}",
-	bright_green =	 "{bright_green}",
-	bright_yellow =  "{bright_yellow}",
-	bright_blue =	 "{bright_blue}",
-	bright_purple = "{bright_purple}",
-	bright_aqua =	 "{bright_aqua}",
-	gray =	 "{gray_244}",
+		color1 = "{color1}",
+		color2 = "{color2}",
+		color3 = "{color3}",
+		color4 = "{color4}", 
+		color5 = "{color5}",
+		color6 = "{color6}",
+		color7 = "{color7}",
+		color8 = "{color8}",
+		color9 = "{color9}",
+		color10 = "{color10}",
+		color11 = "{color11}",
+		color12 = "{color12}",
+		color13 = "{color13}",
+		color14 = "{color14}",
+		color15 = "{color15}",
+		gray =	 "{gray_244}",
 		bg0 = "{bg0}",
 		bg1 = "{bg1}",
 		bg2 = "{bg2}",
@@ -64,7 +56,7 @@
 	hl("PmenuSbar",        { bg = "{bg2}" })
 	hl("PmenuThumb",       { bg = "{color8}" })
 	hl("Question",	       { fg = "{color4}" })
-	hl("QuickFixLine",     { bg = "{bright_blue}" })
+	hl("QuickFixLine",     { bg = "{color12}" })
 
 	-- Recherches et Sélection
 	hl("Visual",	       { bg = "{bg1}" })
@@ -131,7 +123,7 @@
 	hl("Todo",	       { fg = "{background}", bg = "{color3}", bold = true })
 
 	hl("@variable",		   { fg = "{foreground}" })
-	hl("@variable.builtin",    { fg = "{bright_purple}", italic = true })
+	hl("@variable.builtin",    { fg = "{color13}", italic = true })
 	hl("@variable.parameter",  { fg = "{foreground}", italic = true })
 	hl("@field",		   { fg = "{color6}" })
 	hl("@property",		   { fg = "{color6}" })
@@ -153,7 +145,7 @@
 	hl("@punctuation.delimiter",{ fg = "{color15}" })
 
 	-- Python
-	hl("@attribute.python",    { fg = "{bright_yellow}" }) -- Décorateurs
+	hl("@attribute.python",    { fg = "{color11}" }) -- Décorateurs
 
 	-- Markup (Markdown)
 	hl("@text.title",	   { fg = "{color4}", bold = true })
@@ -179,9 +171,9 @@
 	hl("LspReferenceRead",	   { bg = "{bg2}" })
 	hl("LspReferenceWrite",    { bg = "{bg2}" })
 
-	hl("DiffAdd",		   { fg = "{color2}", bg = "{bright_green}" })
-	hl("DiffChange",	   { fg = "{color3}", bg = "{bright_yellow}" })
-	hl("DiffDelete",	   { fg = "{color1}", bg = "{bright_red}" })
+	hl("DiffAdd",		   { fg = "{color2}", bg = "{color10}" })
+	hl("DiffChange",	   { fg = "{color3}", bg = "{color11}" })
+	hl("DiffDelete",	   { fg = "{color1}", bg = "{color9}" })
 	hl("DiffText",		   { fg = "{background}", bg = "{color4}" })
 
 	hl("SignColumnSB",	   {{ bg = "NONE" }})
