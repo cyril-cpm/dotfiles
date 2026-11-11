@@ -198,8 +198,8 @@ rules = [
 	{ mime = "application/*zip", fg = "#cc241d" },
 	{ mime = "application/x-{tar,bzip*,7z-compressed,xz,rar}", fg = "#cc241d" },
 	{ mime = "application/{pdf,doc,rtf,vnd.*}", fg = "#689d6a" },
-	{ name = "*.cpp", fg = "#458588" },
-	{ name = "*", fg = "#d79921" },
-	{ name = "*/", fg = "#689d6a" },
+	{ url = "*.cpp", fg = "#458588" },
+	{ url = "*", fg = "#d79921" },
+	{ url = "*/", fg = "#689d6a" },
 ]
 # : }}}

@@ -112,6 +112,10 @@ require("nvim-treesitter.configs").setup {
 	highlight = { enable = true },
 }
 
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldlevel = 99 -- Ouvre les fichiers sans tout plier au démarrage
+
 -- Telescope
 local t = require("telescope")
 local z_utils = require("telescope._extensions.zoxide.utils")
