@@ -17,9 +17,14 @@ smart_gaps off
 # Read `man 5 sway` for a complete reference.
 
 # Appearence
+include "~/.cache/wal/colors-sway"
+
 default_border pixel 1
-client.focused #F24848 #331215 #F24848
-client.unfocused #331215 #331215 #631F21
+# client.focused #F24848 #331215 #F24848
+# client.unfocused #331215 #331215 #631F21
+client.focused $bg0 $bg0 $foreground
+client.unfocused $bg4 $bg3 $bg0
+
 
 ### Variables
 #
